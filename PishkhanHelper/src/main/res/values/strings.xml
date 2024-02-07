@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="barcodeScan">بارکد را اسکن کنید</string>
+    <string name="rating_bottom_sheet_message">لطفا برای حمایت و بهبود عملکرد، به برنامه امتیاز دهید و نظر خود را با ما در میان بگذارید.</string>
+    <string name="rate">امتیاز میدم</string>
+    <string name="later">بعدا</string>
+    <string name="thanks_for_your_feedback">از بازخورد شما سپاس‌گزاریم...</string>
+</resources>

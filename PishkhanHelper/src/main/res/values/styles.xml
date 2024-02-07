@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    region BottomSheetRating Layout-->
+    <style name="BottomSheetRating">
+        <item name="android:background">@color/BottomSheetRatingRootBackground</item>
+    </style>
+
+    <style name="BottomSheetRating.YesButton" parent="AyanAppButton">
+        <item name="android:textColor">@color/rating_bottom_sheet_yes_btn_text_color</item>
+        <item name="android:backgroundTint">@color/rating_bottom_sheet_yes_btn_background_color
+        </item>
+    </style>
+
+    <style name="BottomSheetRating.LaterButton" parent="AyanAppButton.Outline">
+        <item name="android:textColor">@color/rating_bottom_sheet_later_btn_text_color</item>
+        <item name="android:backgroundTint">@color/rating_bottom_sheet_later_btn_background_color
+        </item>
+    </style>
+
+    <style name="BottomSheetRating.Message">
+        <item name="android:textColor">@color/rating_bottom_sheet_message_tv_text_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!--    endregion-->
+
+</resources>

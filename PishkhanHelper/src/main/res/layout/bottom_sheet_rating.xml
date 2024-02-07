@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/BottomSheetRating"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/main_padding"
+    android:paddingBottom="@dimen/main_padding">
+
+    <TextView
+        android:id="@+id/messageTv"
+        style="@style/BottomSheetRating.Message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/main_padding"
+        android:layout_marginEnd="@dimen/main_padding"
+        android:gravity="start"
+        android:text="@string/rating_bottom_sheet_message"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/main_padding"
+        app:layout_constraintTop_toBottomOf="@id/messageTv">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/yesBtn"
+            style="@style/BottomSheetRating.YesButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="@string/rate" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/laterBtn"
+            style="@style/BottomSheetRating.LaterButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/later" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

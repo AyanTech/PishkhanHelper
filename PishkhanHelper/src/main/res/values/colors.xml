@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rating_bottom_sheet_yes_btn_background_color">@color/colorPrimary</color>
+    <color name="rating_bottom_sheet_later_btn_background_color">@color/colorPrimary</color>
+    <color name="rating_bottom_sheet_yes_btn_text_color">@color/white</color>
+    <color name="rating_bottom_sheet_later_btn_text_color">@color/colorPrimary</color>
+    <color name="rating_bottom_sheet_message_tv_text_color">#000000</color>
+    <color name="BottomSheetRatingRootBackground">#ffffff</color>
+</resources>
