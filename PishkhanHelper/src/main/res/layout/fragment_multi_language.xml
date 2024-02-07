@@ -4,17 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackgroundSub"
-    android:paddingStart="@dimen/margin_16"
-    android:paddingEnd="@dimen/margin_16"
-    tools:context=".ui.fragment.MultiLanguageFragment">
+    android:background="@color/white"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:src="@drawable/ic_choose_lang"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +21,7 @@
         android:id="@+id/tv_choose_prefer_language"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/tv_please_choose_prefer_language"
+        android:text="زبان مورد نظر خود را انتخاب نمایید"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_header" />
@@ -44,19 +42,17 @@
             android:id="@+id/persian_lang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:button="@drawable/bg_radio_button"
-            android:paddingHorizontal="@dimen/margin_16"
-            android:paddingVertical="@dimen/margin_10"
-            android:text="@string/persian_language" />
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp"
+            android:text="فارسی" />
 
         <RadioButton
             android:id="@+id/english_lang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:button="@drawable/bg_radio_button"
-            android:paddingHorizontal="@dimen/margin_16"
-            android:paddingVertical="@dimen/margin_10"
-            android:text="@string/english_language" />
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp"
+            android:text="انگلیسی" />
 
     </RadioGroup>
 

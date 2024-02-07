@@ -4,13 +4,12 @@ import android.content.Context
 import android.util.Log
 import ir.ayantech.ayannetworking.api.AyanApi
 import ir.ayantech.ayannetworking.api.AyanCallStatus
-import ir.ayantech.ayannetworking.api.AyanCommonCallStatus
 import ir.ayantech.ayannetworking.api.OnFailure
 import ir.ayantech.pishkhanhelper.model.ConfigBusinessInfo
 import ir.ayantech.pishkhanhelper.storage.SavedData
 import ir.ayantech.pishkhanhelper.utils.openDial
+import ir.ayantech.pushsdk.core.AyanNotification
 import ir.ayantech.versioncontrol.VersionControlCore
-import ir.ayantech.whygoogle.helper.StringCallBack
 
 object PishkhanHelper {
 
@@ -19,6 +18,7 @@ object PishkhanHelper {
     fun initialize(context: Context, corePishkhan24Api: AyanApi) {
         SavedData.initialize(context)
         this.corePishkhan24Api = corePishkhan24Api
+        AyanNotification.initialize(context)
     }
 
     fun shareApp(context: Context) {
