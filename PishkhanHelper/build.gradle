@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
     id 'kotlin-kapt'
     id 'maven-publish'
 }
@@ -11,7 +12,7 @@ android {
 
     defaultConfig {
         minSdk 21
-
+        targetSdk 34
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -24,7 +25,7 @@ android {
         }
     }
     compileOptions {
-        coreLibraryDesugaringEnabled true
+//        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -35,7 +36,7 @@ android {
         viewBinding true
     }
     publishing {
-        singleVariant("release")
+        singleVariant('release')
     }
 }
 
@@ -89,7 +90,7 @@ afterEvaluate {
                 artifactId = 'pishkhanhelper'
 
                 // Version Library Name (Example : "1.0.0")
-                version = '0.0.1'
+                version = '0.0.2'
             }
         }
     }
