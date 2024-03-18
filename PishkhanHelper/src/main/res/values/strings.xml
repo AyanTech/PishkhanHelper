@@ -6,4 +6,22 @@
     <string name="rate">امتیاز میدم</string>
     <string name="later">بعدا</string>
     <string name="thanks_for_your_feedback">از بازخورد شما سپاس‌گزاریم...</string>
+
+    <string name="rate_app">امتیاز به برنامه</string>
+    <string name="share_app">اشتراک‌گذاری</string>
+    <string name="privacy_policy">حریم شخصی</string>
+    <string name="choose_app_language">انتخاب زبان</string>
+    <string name="please_wait_for_response">در حال دریافت اطلاعات از سرور لطفا منتظر بمانید...</string>
+    <string name="retry">تلاش مجدد</string>
+    <string name="error">خطا</string>
+    <string name="error_occurred">خطایی رخ داده!</string>
+    <string name="timeout_error_message">پاسخی از سرور دریافت نشد. لطفا دوباره تلاش نمایید.</string>
+    <string name="cancel">انصراف</string>
+    <string name="ok">باشه</string>
+    <string name="confirm">تایید</string>
+    <string name="delete_confirmation">آیا از حذف این مورد اطمینان دارید؟</string>
+    <string name="attention">توجه</string>
+    <string name="tv_please_choose_prefer_language">زبان مورد نظر خود را انتخاب کنید (choose your preferred language) :</string>
+    <string name="persian_language">فارسی (Persian)</string>
+    <string name="english_language">انگلیسی (English)</string>
 </resources>

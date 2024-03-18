@@ -27,7 +27,7 @@ object PishkhanHelper {
 
     fun getConfigBusinessInfo(onGetResult: (ConfigBusinessInfo.Output) -> Unit, onFailure: OnFailure? = null) {
         corePishkhan24Api?.ayanCall<ConfigBusinessInfo.Output>(
-            endPoint = "ConfigBusinessInfo",
+            endPoint = "v1/ConfigBusinessInfo",
             ayanCallStatus = AyanCallStatus {
                 success {
                     if (it.response == null) {

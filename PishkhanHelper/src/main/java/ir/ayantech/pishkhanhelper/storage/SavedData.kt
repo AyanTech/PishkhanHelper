@@ -20,7 +20,7 @@ object SavedData {
     }
 
     var appLanguage: String
-        get() = preferencesManager.read(APP_LANGUAGE_KEY)
+        get() = preferencesManager.read(APP_LANGUAGE_KEY, "")
         set(value) {
             preferencesManager.save(APP_LANGUAGE_KEY, value)
         }
