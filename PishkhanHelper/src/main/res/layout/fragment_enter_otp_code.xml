@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loginToolbarCl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_160sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appLogoIv"
+            android:layout_width="@dimen/_88sdp"
+            android:layout_height="@dimen/_104sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_logo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/background_top_radius_16"
+        android:paddingStart="@dimen/margin_16"
+        android:paddingEnd="@dimen/margin_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginToolbarCl">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/enterOtpCodeTitleTv"
+            style="@style/Title"
+            android:textColor="@color/text_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_24"
+            android:text="@string/enter_otp_code_description"
+            android:textAlignment="viewStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/enterOtpCodeDescriptionTv"
+            style="@style/Text2Regular"
+            android:textColor="@color/ph_gray4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12"
+            android:textAlignment="viewStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enterOtpCodeTitleTv"
+            tools:text="کد تایید برای شماره 09121234567 پیامک شد." />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/editPhoneNumberTv"
+            style="@style/Text2Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4"
+            android:layout_marginTop="@dimen/margin_12"
+            android:text="@string/edit_phone_number"
+            android:textAlignment="viewStart"
+            android:textColor="@color/color_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enterOtpCodeDescriptionTv" />
+
+        <include
+            android:id="@+id/otpCodeInput"
+            layout="@layout/component_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12"
+            app:layout_constraintTop_toBottomOf="@id/editPhoneNumberTv" />
+
+        <include
+            android:id="@+id/confirmOtpCodeBtn"
+            layout="@layout/component_button_filled"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/margin_12"
+            app:layout_constraintTop_toBottomOf="@id/otpCodeInput" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/resendOtpCodeTv"
+            style="@style/Text2Light"
+            android:textColor="@color/ph_gray3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/confirmOtpCodeBtn"
+            tools:text="02:14 ثانیه تا دریافت مجدد کد تایید" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

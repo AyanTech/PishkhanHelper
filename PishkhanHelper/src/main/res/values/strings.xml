@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AppName</string>
+    <string name="app_title">App Title</string>
 
     <string name="phone_number">شماره موبایل</string>
     <string name="otp_code">کد تایید</string>
@@ -11,7 +12,13 @@
     <string name="later">بعدا</string>
     <string name="thanks_for_your_feedback">از بازخورد شما سپاس‌گزاریم...</string>
 
+    <string name="submit">تایید</string>
+    <string name="choose_language">انتخاب زبان</string>
     <string name="rate_app">امتیاز به برنامه</string>
+    <string name="transaction_history">سوابق تراکنش</string>
+    <string name="login_to_account">ورود به حساب کاربری</string>
+    <string name="logout">خروج از حساب کاربری</string>
+    <string name="logout_confirmation">می‌خواهید از حساب خود خارج شوید؟</string>
     <string name="share_app">اشتراک‌گذاری</string>
     <string name="privacy_policy">حریم شخصی</string>
     <string name="choose_app_language">انتخاب زبان</string>
@@ -28,4 +35,18 @@
     <string name="tv_please_choose_prefer_language">زبان مورد نظر خود را انتخاب کنید (choose your preferred language) :</string>
     <string name="persian_language">فارسی (Persian)</string>
     <string name="english_language">انگلیسی (English)</string>
+    <string name="login_signup">ورود | ثبت نام</string>
+    <string name="login_signup_description">برای ورود یا ثبت‌نام، شماره موبایل خود را وارد کنید.</string>
+    <string name="terms_and_conditions_description">ورود شما به معنی پذیرش قوانین و مقررات است.</string>
+    <string name="otp_sent_to_phone_number">کد تایید برای شماره %s پیامک شد.</string>
+    <string name="edit_phone_number">اصلاح شماره</string>
+    <string name="login">ورود</string>
+    <string name="enter_otp_code_description">کد تایید را وارد کنید.</string>
+    <string name="enter_your_phone_number">شماره موبایل خود را وارد کنید!</string>
+    <string name="remaining_seconds_to_resend_otp_code">%s ثانیه تا دریافت مجدد کد تایید</string>
+    <string name="resend_otp_code">ارسال مجدد کد تایید</string>
+    <string name="enter_otp_code">کد تایید را وارد کنید!</string>
+
+    <string name="open" translatable="false">Open</string>
+    <string name="close" translatable="false">Close</string>
 </resources>

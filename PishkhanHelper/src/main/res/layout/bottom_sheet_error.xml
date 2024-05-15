@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:padding="@dimen/margin_16">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/errorIv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:paddingStart="@dimen/margin_64"
+        android:paddingEnd="@dimen/margin_64"
+        app:srcCompat="@drawable/vector_error" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/messageTv"
+        style="@style/Text2Regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/errorIv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_8"
+        android:gravity="center"
+        android:justificationMode="inter_word"
+        android:textColor="@color/ph_gray1"
+        tools:text="خطای شماره 503 پیش آمده، لطفا مجدد امتحان کنید" />
+
+    <include
+        android:id="@+id/retryBtnComponent"
+        layout="@layout/component_button_filled"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_below="@id/messageTv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_16" />
+</RelativeLayout>

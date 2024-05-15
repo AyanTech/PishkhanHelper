@@ -19,6 +19,9 @@ class MarketRatingBottomSheet(
     override val binder: (LayoutInflater) -> BottomSheetRatingBinding
         get() = BottomSheetRatingBinding::inflate
 
+    override val title: String
+        get() = "امتیاز به برنامه"
+
     override fun onCreate() {
         super.onCreate()
 
