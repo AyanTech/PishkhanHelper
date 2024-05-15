@@ -2,9 +2,11 @@ package ir.ayantech.pishkhanhelper
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ir.ayantech.ayannetworking.api.AyanApi
 import ir.ayantech.ayannetworking.ayanModel.LogLevel
+import ir.ayantech.pishkhanhelper.components.initButtonFilled
 import ir.ayantech.pishkhanhelper.databinding.ActivityMainBinding
 import ir.ayantech.pishkhanhelper.rate.showRatingIntent
 
@@ -29,6 +31,11 @@ class MainActivity : AppCompatActivity() {
             logLevel = LogLevel.LOG_ALL
         )
         binding.apply {
+            binding.filledButton.initButtonFilled(
+                btnText = "استعلام"
+            ) {
+                Toast.makeText(this@MainActivity, "DONE :)", Toast.LENGTH_SHORT).show()
+            }
             init.setOnClickListener {
                 PishkhanHelper.initialize(application, ayanApi)
             }

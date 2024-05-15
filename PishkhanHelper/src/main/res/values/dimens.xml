@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_1">@dimen/_1sdp</dimen>
+    <dimen name="margin_2">@dimen/_2sdp</dimen>
+    <dimen name="margin_3">@dimen/_3sdp</dimen>
+    <dimen name="margin_4">@dimen/_4sdp</dimen>
+    <dimen name="margin_5">@dimen/_5sdp</dimen>
+    <dimen name="margin_6">@dimen/_6sdp</dimen>
+    <dimen name="margin_8">@dimen/_8sdp</dimen>
+    <dimen name="margin_10">@dimen/_10sdp</dimen>
+    <dimen name="margin_12">@dimen/_12sdp</dimen>
+    <dimen name="margin_13">@dimen/_13sdp</dimen>
+    <dimen name="margin_14">@dimen/_14sdp</dimen>
+    <dimen name="margin_15">@dimen/_15sdp</dimen>
+    <dimen name="margin_16">@dimen/_16sdp</dimen>
+    <dimen name="margin_20">@dimen/_20sdp</dimen>
+    <dimen name="margin_24">@dimen/_24sdp</dimen>
+    <dimen name="margin_28">@dimen/_28sdp</dimen>
+    <dimen name="margin_32">@dimen/_32sdp</dimen>
+    <dimen name="margin_36">@dimen/_36sdp</dimen>
+    <dimen name="margin_40">@dimen/_40sdp</dimen>
+    <dimen name="margin_42">@dimen/_42sdp</dimen>
+    <dimen name="margin_43">@dimen/_43sdp</dimen>
+    <dimen name="margin_44">@dimen/_44sdp</dimen>
+    <dimen name="margin_46">@dimen/_46sdp</dimen>
+    <dimen name="margin_48">@dimen/_48sdp</dimen>
+    <dimen name="margin_52">@dimen/_52sdp</dimen>
+    <dimen name="margin_56">@dimen/_56sdp</dimen>
+    <dimen name="margin_64">@dimen/_64sdp</dimen>
+    <dimen name="margin_74">@dimen/_74sdp</dimen>
+    <dimen name="margin_80">@dimen/_80sdp</dimen>
+    <dimen name="margin_84">@dimen/_84sdp</dimen>
+    <dimen name="margin_90">@dimen/_90sdp</dimen>
+    <dimen name="margin_92">@dimen/_92sdp</dimen>
+    <dimen name="margin_100">@dimen/_100sdp</dimen>
+    <dimen name="margin_110">@dimen/_110sdp</dimen>
+    <dimen name="margin_120">@dimen/_120sdp</dimen>
+    <dimen name="margin_124">@dimen/_124sdp</dimen>
+    <dimen name="margin_130">@dimen/_130sdp</dimen>
+    <dimen name="margin_144">@dimen/_144sdp</dimen>
+    <dimen name="margin_150">@dimen/_150sdp</dimen>
+    <dimen name="margin_160">@dimen/_160sdp</dimen>
+    <dimen name="margin_170">@dimen/_170sdp</dimen>
+    <dimen name="margin_200">@dimen/_200sdp</dimen>
+    <dimen name="margin_220">@dimen/_220sdp</dimen>
+    <dimen name="margin_270">@dimen/_270sdp</dimen>
+    <dimen name="margin_280">@dimen/_280sdp</dimen>
+    <dimen name="margin_300">@dimen/_300sdp</dimen>
+    <dimen name="margin_360">@dimen/_360sdp</dimen>
+    <dimen name="margin_400">@dimen/_400sdp</dimen>
+
+    <dimen name="margin_minus_42">-42dp</dimen>
+    <dimen name="margin_minus_46">-46dp</dimen>
+
+    <dimen name="main_padding">@dimen/margin_16</dimen>
+
+    <dimen name="text_bold_1">@dimen/_30ssp</dimen>
+    <dimen name="text_bold_2">@dimen/_26ssp</dimen>
+    <dimen name="text_bold_3">@dimen/_22ssp</dimen>
+    <dimen name="text_bold_4">@dimen/_18ssp</dimen>
+    <dimen name="text_bold_5">@dimen/_14ssp</dimen>
+    <dimen name="text_bold_6">@dimen/_12ssp</dimen>
+    <dimen name="text_bold_7">@dimen/_11ssp</dimen>
+    <dimen name="text_bold_8">@dimen/_10ssp</dimen>
+
+    <dimen name="text_medium_1">@dimen/_14ssp</dimen>
+    <dimen name="text_medium_2">@dimen/_12ssp</dimen>
+    <dimen name="text_medium_3">@dimen/_11ssp</dimen>
+    <dimen name="text_medium_4">@dimen/_10ssp</dimen>
+
+    <dimen name="text_regular_1">@dimen/_14ssp</dimen>
+    <dimen name="text_regular_2">@dimen/_12ssp</dimen>
+    <dimen name="text_regular_3">@dimen/_11ssp</dimen>
+    <dimen name="text_regular_4">@dimen/_10ssp</dimen>
+    <dimen name="text_regular_5">@dimen/_9ssp</dimen>
+
+    <dimen name="text_light_1">@dimen/_12ssp</dimen>
+    <dimen name="text_light_2">@dimen/_11ssp</dimen>
+    <dimen name="text_light_3">@dimen/_10ssp</dimen>
+    <dimen name="text_light_4">@dimen/_9ssp</dimen>
+
+    <dimen name="main_radius">@dimen/_12sdp</dimen>
+    <dimen name="large_radius">@dimen/_16sdp</dimen>
+
+    <dimen name="button_radius">@dimen/main_radius</dimen>
+    <dimen name="button_filled_radius">@dimen/button_radius</dimen>
+
+    <dimen name="button_outlined_radius">@dimen/button_radius</dimen>
+    <dimen name="button_outlined_stroke_width">@dimen/_1sdp</dimen>
+    <dimen name="button_height">@dimen/margin_43</dimen>
+
+    <dimen name="bottom_menu_selected_item_background_radius">@dimen/_16sdp</dimen>
+
+    <dimen name="edittext_radius">@dimen/main_radius</dimen>
+    <dimen name="edittext_stroke_width">@dimen/_1sdp</dimen>
+    <dimen name="edittext_height">@dimen/margin_43</dimen>
+
+    <dimen name="toolbar_height">@dimen/margin_44</dimen>
+
+    <dimen name="icon_width">@dimen/margin_24</dimen>
+    <dimen name="icon_height">@dimen/margin_24</dimen>
+
+    <dimen name="bottom_sheet_elevation">@dimen/_7sdp</dimen>
+    <dimen name="main_elevation">@dimen/_6sdp</dimen>
+
+    <dimen name="default_elevation">@dimen/margin_2</dimen>
+
+    <dimen name="password_item_size">@dimen/_50sdp</dimen>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatButton xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/outlinedButton"
+    style="@style/AppButton"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/button_height"
+    android:background="@drawable/background_outlined_button"
+    android:gravity="center"
+    android:textAlignment="center"
+    android:textColor="@color/color_primary"
+    tools:text="قبضینو" />
+<!--todo create text color enable/disable-->

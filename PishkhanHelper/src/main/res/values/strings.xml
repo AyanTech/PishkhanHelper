@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">AppName</string>
+
+    <string name="phone_number">شماره موبایل</string>
+    <string name="otp_code">کد تایید</string>
 
     <string name="barcodeScan">بارکد را اسکن کنید</string>
     <string name="rating_bottom_sheet_message">لطفا برای حمایت و بهبود عملکرد، به برنامه امتیاز دهید و نظر خود را با ما در میان بگذارید.</string>

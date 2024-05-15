@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextBold">
+        <item name="fontFamily">@font/iransansx_fa_num_bold</item>
+        <item name="android:fontFamily">@font/iransansx_fa_num_bold</item>
+    </style>
+
+    <style name="Text1Bold" parent="TextBold">
+        <item name="android:textSize">@dimen/text_bold_1</item>
+    </style>
+
+    <style name="Text2Bold" parent="TextBold">
+        <item name="android:textSize">@dimen/text_bold_2</item>
+    </style>
+
+    <style name="Text3Bold" parent="TextBold">
+        <item name="android:textSize">@dimen/text_bold_3</item>
+    </style>
+
+    <style name="Text4Bold" parent="TextBold">
+        <item name="android:textSize">@dimen/text_bold_4</item>
+    </style>
+
+    <style name="Text5Bold" parent="TextBold">
+        <item name="android:textSize">@dimen/text_bold_5</item>
+    </style>
+
+    <style name="Text6Bold" parent="TextBold">
+        <item name="android:textSize">@dimen/text_bold_6</item>
+    </style>
+
+    <style name="Text7Bold" parent="TextBold">
+        <item name="android:textSize">@dimen/text_bold_7</item>
+    </style>
+
+    <style name="Text8Bold" parent="TextBold">
+        <item name="android:textSize">@dimen/text_bold_8</item>
+    </style>
+
+    <style name="TextMedium">
+        <item name="fontFamily">@font/iransansx_fa_num_medium</item>
+        <item name="android:fontFamily">@font/iransansx_fa_num_medium</item>
+    </style>
+
+    <style name="Text1Medium" parent="TextMedium">
+        <item name="android:textSize">@dimen/text_medium_1</item>
+    </style>
+
+    <style name="Text2Medium" parent="TextMedium">
+        <item name="android:textSize">@dimen/text_medium_2</item>
+    </style>
+
+    <style name="Text3Medium" parent="TextMedium">
+        <item name="android:textSize">@dimen/text_medium_3</item>
+    </style>
+
+    <style name="Text4Medium" parent="TextMedium">
+        <item name="android:textSize">@dimen/text_medium_4</item>
+    </style>
+
+    <style name="TextRegular">
+        <item name="fontFamily">@font/iransansx_fa_num_regular</item>
+        <item name="android:fontFamily">@font/iransansx_fa_num_regular</item>
+    </style>
+
+    <style name="Text1Regular" parent="TextRegular">
+        <item name="android:textSize">@dimen/text_regular_1</item>
+    </style>
+
+    <style name="Text2Regular" parent="TextRegular">
+        <item name="android:textSize">@dimen/text_regular_2</item>
+    </style>
+
+    <style name="Text3Regular" parent="TextRegular">
+        <item name="android:textSize">@dimen/text_regular_3</item>
+    </style>
+
+    <style name="Text4Regular" parent="TextRegular">
+        <item name="android:textSize">@dimen/text_regular_4</item>
+    </style>
+
+    <style name="Text5Regular" parent="TextRegular">
+        <item name="android:textSize">@dimen/text_regular_5</item>
+    </style>
+
+    <style name="TextLight">
+        <item name="fontFamily">@font/iransansx_fa_num_light</item>
+        <item name="android:fontFamily">@font/iransansx_fa_num_light</item>
+    </style>
+
+    <style name="Text1Light" parent="TextLight">
+        <item name="android:textSize">@dimen/text_light_1</item>
+    </style>
+
+    <style name="Text2Light" parent="TextLight">
+        <item name="android:textSize">@dimen/text_light_2</item>
+    </style>
+
+    <style name="Text3Light" parent="TextLight">
+        <item name="android:textSize">@dimen/text_light_3</item>
+    </style>
+
+    <style name="Text4Light" parent="TextLight">
+        <item name="android:textSize">@dimen/text_light_4</item>
+    </style>
+
+    <style name="Title" parent="Text5Bold">
+        <item name="android:textColor">@color/text_white</item>
+    </style>
+
+    <style name="TitleLarge" parent="Text8Bold">
+        <item name="android:textColor">@color/text_white</item>
+    </style>
+
+    <style name="TitleRegular" parent="Text3Regular">
+        <item name="android:textColor">@color/text_white</item>
+    </style>
+
+    <style name="TitleMedium" parent="Text2Medium">
+        <item name="android:textColor">@color/text_white</item>
+    </style>
+
+    <style name="TitleLight" parent="Text3Light">
+        <item name="android:textColor">@color/text_white</item>
+    </style>
+
+    <style name="ButtonTextStyle" parent="Text6Bold">
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+</resources>
