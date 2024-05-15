@@ -106,23 +106,23 @@
     </style>
 
     <style name="Title" parent="Text5Bold">
-        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textColor">@color/helper_text_white</item>
     </style>
 
     <style name="TitleLarge" parent="Text8Bold">
-        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textColor">@color/helper_text_white</item>
     </style>
 
     <style name="TitleRegular" parent="Text3Regular">
-        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textColor">@color/helper_text_white</item>
     </style>
 
     <style name="TitleMedium" parent="Text2Medium">
-        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textColor">@color/helper_text_white</item>
     </style>
 
     <style name="TitleLight" parent="Text3Light">
-        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textColor">@color/helper_text_white</item>
     </style>
 
     <style name="ButtonTextStyle" parent="Text6Bold">

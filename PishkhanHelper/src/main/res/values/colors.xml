@@ -7,59 +7,48 @@
     <color name="rating_bottom_sheet_message_tv_text_color">#000000</color>
     <color name="BottomSheetRatingRootBackground">#ffffff</color>
 
-    <color name="color_primary">#931FA8</color>
-    <color name="color_primary_dark">#931FA8</color>
-    <color name="color_primary_light">#931FA8</color>
-    <color name="color_accent">#9c27b0</color>
-    <color name="color_accent_dark">#9c27b0</color>
-    <color name="color_accent_light">#9c27b0</color>
-    <color name="color_accent_second">#fff</color>
-    <color name="colorAccent">@color/color_primary</color>
-    <color name="colorPrimary">@color/color_primary</color>
-    <color name="colorPrimaryDark">@color/color_primary_dark</color>
+    <color name="helper_color_primary">@color/colorPrimary</color>
 
-    <color name="color_secondary">#00BAF2</color>
+    <color name="helper_status_bar_color">#313236</color>
+    <color name="helper_navigation_bar_color">#757575</color>
 
-    <color name="status_bar_color">#313236</color>
-    <color name="navigation_bar_color">#757575</color>
+    <color name="helper_background_top_radius_16_solid">#F1F1F1</color>
 
-    <color name="background_top_radius_16_solid">#F1F1F1</color>
+    <color name="helper_state_error">#ED254E</color>
 
-    <color name="state_error">#ED254E</color>
+    <color name="helper_text_white">@color/white</color>
+    <color name="helper_background_color">#313236</color>
+    <color name="helper_text_black">#212121</color>
 
-    <color name="text_white">@color/white</color>
-    <color name="background_color">#313236</color>
-    <color name="text_black">#212121</color>
+    <color name="helper_gray1">#212121</color>
+    <color name="helper_gray2">#424242</color>
+    <color name="helper_gray3">#616161</color>
+    <color name="helper_gray4">#555555</color>
+    <color name="helper_gray5">#757575</color>
+    <color name="helper_gray6">#BDBDBD</color>
+    <color name="helper_gray7">#D8D8D8</color>
+    <color name="helper_gray8">#F3F3F3</color>
+    <color name="helper_gray9">#FAFAFA</color>
 
-    <color name="ph_gray1">#212121</color>
-    <color name="ph_gray2">#424242</color>
-    <color name="ph_gray3">#616161</color>
-    <color name="ph_gray4">#555555</color>
-    <color name="ph_gray5">#757575</color>
-    <color name="ph_gray6">#BDBDBD</color>
-    <color name="ph_gray7">#D8D8D8</color>
-    <color name="ph_gray8">#F3F3F3</color>
-    <color name="ph_gray9">#FAFAFA</color>
+    <color name="helper_transparent">@android:color/transparent</color>
 
-    <color name="transparent">@android:color/transparent</color>
+    <color name="helper_button_filled_background_solid_enable">@color/helper_color_primary</color>
+    <color name="helper_button_filled_background_solid_disable">@color/helper_gray7</color>
 
-    <color name="button_filled_background_solid_enable">@color/color_primary</color>
-    <color name="button_filled_background_solid_disable">@color/ph_gray7</color>
+    <color name="helper_button_textColor_enable">@color/white</color>
+    <color name="helper_button_textColor_disable">@color/helper_gray5</color>
 
-    <color name="button_textColor_enable">@color/white</color>
-    <color name="button_textColor_disable">@color/ph_gray5</color>
+    <color name="helper_button_outlined_background_solid">@color/helper_transparent</color>
+    <color name="helper_button_outlined_background_stroke_enable">@color/helper_color_primary</color>
+    <color name="helper_button_outlined_background_stroke_disable">@color/helper_gray7</color>
 
-    <color name="button_outlined_background_solid">@color/transparent</color>
-    <color name="button_outlined_background_stroke_enable">@color/color_primary</color>
-    <color name="button_outlined_background_stroke_disable">@color/ph_gray7</color>
+    <color name="helper_edittext_background_solid_enable">@color/helper_gray8</color>
+    <color name="helper_edittext_background_solid_disable">@color/helper_gray9</color>
+    <color name="helper_edittext_background_stroke_enable">@color/helper_gray6</color>
+    <color name="helper_edittext_background_stroke_disable">@color/helper_gray7</color>
+    <color name="helper_edittext_textColor_enable">@color/helper_gray4</color>
+    <color name="helper_edittext_textColor_disable">@color/helper_gray6</color>
 
-    <color name="edittext_background_solid_enable">@color/ph_gray8</color>
-    <color name="edittext_background_solid_disable">@color/ph_gray9</color>
-    <color name="edittext_background_stroke_enable">@color/ph_gray6</color>
-    <color name="edittext_background_stroke_disable">@color/ph_gray7</color>
-    <color name="edittext_textColor_enable">@color/ph_gray4</color>
-    <color name="edittext_textColor_disable">@color/ph_gray6</color>
-
-    <color name="row_key_value_back_even_position">@color/white</color>
-    <color name="row_key_value_back_odd_position">@color/ph_gray8</color>
+    <color name="helper_row_key_value_back_even_position">@color/white</color>
+    <color name="helper_row_key_value_back_odd_position">@color/helper_gray8</color>
 </resources>

@@ -17,7 +17,7 @@
             android:layout_centerHorizontal="true"
             android:layout_width="match_parent"
             android:layout_height="@dimen/margin_48"
-            android:background="@color/background_color">
+            android:background="@color/helper_background_color">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:padding="@dimen/margin_12"
-                app:srcCompat="@drawable/ic_menu" />
+                app:srcCompat="@drawable/helper_ic_menu" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/backIv"
@@ -45,7 +45,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:padding="@dimen/margin_12"
                 android:visibility="gone"
-                app:srcCompat="@drawable/ic_back" />
+                app:srcCompat="@drawable/helper_ic_back" />
         </RelativeLayout>
 
 
@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@drawable/background_left_radius_16"
+        android:background="@drawable/helper_background_left_radius_16"
         android:fitsSystemWindows="true">
 
         <RelativeLayout
@@ -76,8 +76,8 @@
                 android:layout_height="@dimen/_150sdp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/background_top_left_radius_16"
-                android:backgroundTint="@color/background_color"
+                android:background="@drawable/helper_background_top_left_radius_16"
+                android:backgroundTint="@color/helper_background_color"
                 android:paddingTop="@dimen/_24sdp"
                 android:paddingBottom="@dimen/_24sdp">
 
@@ -127,7 +127,7 @@
                     android:drawablePadding="@dimen/_8sdp"
                     android:gravity="center_vertical"
                     android:text="@string/transaction_history"
-                    android:textColor="@color/text_black" />
+                    android:textColor="@color/helper_text_black" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/transactionHistoryIv"
@@ -135,9 +135,9 @@
                     android:layout_height="@dimen/margin_32"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/background_radius_8"
+                    android:background="@drawable/helper_background_radius_8"
                     android:padding="@dimen/margin_8"
-                    app:srcCompat="@drawable/ic_payment_history" />
+                    app:srcCompat="@drawable/helper_ic_payment_history" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -161,7 +161,7 @@
                     android:drawablePadding="@dimen/_8sdp"
                     android:gravity="center_vertical"
                     android:text="@string/rate_app"
-                    android:textColor="@color/text_black" />
+                    android:textColor="@color/helper_text_black" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/rateAppIv"
@@ -169,9 +169,9 @@
                     android:layout_height="@dimen/margin_32"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/background_radius_8"
+                    android:background="@drawable/helper_background_radius_8"
                     android:padding="@dimen/margin_8"
-                    app:srcCompat="@drawable/ic_rate" />
+                    app:srcCompat="@drawable/helper_ic_rate" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -194,7 +194,7 @@
                     android:drawablePadding="@dimen/_8sdp"
                     android:gravity="center_vertical"
                     android:text="@string/share_app"
-                    android:textColor="@color/text_black" />
+                    android:textColor="@color/helper_text_black" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/shareAppIv"
@@ -202,9 +202,9 @@
                     android:layout_height="@dimen/margin_32"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/background_radius_8"
+                    android:background="@drawable/helper_background_radius_8"
                     android:padding="@dimen/margin_8"
-                    app:srcCompat="@drawable/ic_share" />
+                    app:srcCompat="@drawable/helper_ic_share" />
             </RelativeLayout>
 
 
@@ -241,7 +241,7 @@
                     android:drawablePadding="@dimen/_8sdp"
                     android:gravity="center_vertical"
                     android:text="@string/choose_app_language"
-                    android:textColor="@color/text_black" />
+                    android:textColor="@color/helper_text_black" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/appLanguageIv"
@@ -249,9 +249,9 @@
                     android:layout_height="@dimen/margin_32"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/background_radius_8"
+                    android:background="@drawable/helper_background_radius_8"
                     android:padding="@dimen/margin_8"
-                    app:srcCompat="@drawable/ic_language" />
+                    app:srcCompat="@drawable/helper_ic_language" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -274,7 +274,7 @@
                     android:drawablePadding="@dimen/_8sdp"
                     android:gravity="center_vertical"
                     android:text="@string/login_to_account"
-                    android:textColor="@color/text_black" />
+                    android:textColor="@color/helper_text_black" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/loginLogoutIv"
@@ -282,9 +282,9 @@
                     android:layout_height="@dimen/margin_32"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/background_radius_8"
+                    android:background="@drawable/helper_background_radius_8"
                     android:padding="@dimen/margin_8"
-                    tools:srcCompat="@drawable/ic_language" />
+                    tools:srcCompat="@drawable/helper_ic_language" />
             </RelativeLayout>
 
 

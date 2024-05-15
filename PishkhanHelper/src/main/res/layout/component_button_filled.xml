@@ -5,8 +5,8 @@
     style="@style/AppButton"
     android:layout_width="match_parent"
     android:layout_height="@dimen/button_height"
-    android:background="@drawable/background_filled_button"
+    android:background="@drawable/helper_background_filled_button"
     android:gravity="center"
     android:textAlignment="center"
-    android:textColor="@color/button_textColor_enable"
+    android:textColor="@color/helper_button_textColor_enable"
     tools:text="قبضینو" />

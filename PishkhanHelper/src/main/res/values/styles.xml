@@ -33,22 +33,22 @@
         <item name="boxCornerRadiusTopStart">@dimen/edittext_radius</item>
         <item name="boxStrokeWidth">@dimen/edittext_stroke_width</item>
         <item name="boxStrokeWidthFocused">@dimen/edittext_stroke_width</item>
-        <item name="boxStrokeErrorColor">@color/state_error</item>
-        <item name="errorTextColor">@color/state_error</item>
-        <item name="boxStrokeColor">@color/background_edittext_stroke_enable_disable</item>
-        <item name="boxBackgroundColor">@color/background_edittext_solid_enable_disable</item>
+        <item name="boxStrokeErrorColor">@color/helper_state_error</item>
+        <item name="errorTextColor">@color/helper_state_error</item>
+        <item name="boxStrokeColor">@color/helper_background_edittext_stroke_enable_disable</item>
+        <item name="boxBackgroundColor">@color/helper_background_edittext_solid_enable_disable</item>
         <item name="hintEnabled">false</item>
         <item name="errorIconDrawable">@null</item>
     </style>
 
     <style name="GlobalTextInputEditText" parent="Text3Regular">
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/text_color_edittext_enable_disable</item>
-        <item name="android:textColorHint">@color/text_color_edittext_enable_disable</item>
+        <item name="android:textColor">@color/helper_text_color_edittext_enable_disable</item>
+        <item name="android:textColorHint">@color/helper_text_color_edittext_enable_disable</item>
         <item name="android:paddingTop">@dimen/margin_4</item>
         <item name="android:paddingBottom">@dimen/margin_4</item>
         <item name="android:textDirection">anyRtl</item>
-        <item name="android:textCursorDrawable">@drawable/cursor</item>
+        <item name="android:textCursorDrawable">@drawable/helper_cursor</item>
     </style>
 
     <style name="AppButton" parent="@android:style/Widget.Button">
@@ -68,15 +68,15 @@
         <item name="bottomSheetStyle">@style/AppModalStyle</item>
         <item name="android:windowSoftInputMode">adjustResize</item>
         <item name="android:windowIsFloating">false</item>
-        <item name="colorPrimary">@color/color_primary</item>
-        <item name="colorAccent">@color/color_primary</item>
-        <item name="colorControlActivated">@color/color_primary</item>
-        <item name="colorControlHighlight">@color/color_primary</item>
-        <item name="colorControlNormal">@color/color_primary</item>
-        <item name="android:textCursorDrawable">@drawable/cursor</item>
+        <item name="colorPrimary">@color/helper_color_primary</item>
+        <item name="colorAccent">@color/helper_color_primary</item>
+        <item name="colorControlActivated">@color/helper_color_primary</item>
+        <item name="colorControlHighlight">@color/helper_color_primary</item>
+        <item name="colorControlNormal">@color/helper_color_primary</item>
+        <item name="android:textCursorDrawable">@drawable/helper_cursor</item>
     </style>
 
     <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/background_bottom_sheet</item>
+        <item name="android:background">@drawable/helper_background_bottom_sheet</item>
     </style>
 </resources>

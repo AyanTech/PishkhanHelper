@@ -87,7 +87,7 @@ abstract class EnterOtpCodeFragment : WhyGoogleFragment<FragmentEnterOtpCodeBind
                         text = text,
                         start = 0,
                         end = text.length,
-                        color = requireActivity().getColorCompat(R.color.color_primary),
+                        color = requireActivity().getColorCompat(R.color.helper_color_primary),
                         bold = true
                     )
                 }
@@ -102,7 +102,7 @@ abstract class EnterOtpCodeFragment : WhyGoogleFragment<FragmentEnterOtpCodeBind
                         ),
                         start = 0,
                         end = remainingSeconds.toString().length,
-                        color = requireActivity().getColorCompat(R.color.color_primary),
+                        color = requireActivity().getColorCompat(R.color.helper_color_primary),
                         bold = true
                     )
                 }

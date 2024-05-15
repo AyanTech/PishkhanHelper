@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:alpha="1" android:color="@color/color_primary" android:state_focused="true"/>
-    <item android:alpha="1" android:color="@color/color_primary" android:state_hovered="true"/>
-    <item android:alpha="1" android:color="@color/edittext_background_stroke_disable" android:state_enabled="false"/>
-    <item android:alpha="1" android:color="@color/edittext_background_stroke_enable" />
-</selector>

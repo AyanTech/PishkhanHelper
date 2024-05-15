@@ -11,7 +11,6 @@ import ir.ayantech.ayannetworking.api.AyanApi
 import ir.ayantech.ayannetworking.api.AyanCommonCallStatus
 import ir.ayantech.ayannetworking.api.CallingState
 import ir.ayantech.ayannetworking.ayanModel.FailureType
-import ir.ayantech.pishkhanhelper.BuildConfig
 import ir.ayantech.pishkhanhelper.PishkhanHelper
 import ir.ayantech.pishkhanhelper.R
 import ir.ayantech.pishkhanhelper.app.HelperApplication
@@ -265,10 +264,10 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
                         login()
                 }
             }
-            loginLogoutIv.setImageResource(if (isUserLoggedIn) R.drawable.ic_logout else R.drawable.ic_login)
+            loginLogoutIv.setImageResource(if (isUserLoggedIn) R.drawable.helper_ic_logout else R.drawable.helper_ic_login)
 
-            menuNavigationDrawer.setBackgroundResource(if (SavedData.appLanguage == "fa") R.drawable.background_left_radius_16 else R.drawable.background_right_radius_16)
-            navigationDrawerTopLayoutCl.setBackgroundResource(if (SavedData.appLanguage == "fa") R.drawable.background_top_left_radius_16 else R.drawable.background_top_right_radius_16)
+            menuNavigationDrawer.setBackgroundResource(if (SavedData.appLanguage == "fa") R.drawable.helper_background_left_radius_16 else R.drawable.helper_background_right_radius_16)
+            navigationDrawerTopLayoutCl.setBackgroundResource(if (SavedData.appLanguage == "fa") R.drawable.helper_background_top_left_radius_16 else R.drawable.helper_background_top_right_radius_16)
 
             drawerLayout.addDrawerListener(object : DrawerLayout.DrawerListener {
                 override fun onDrawerSlide(drawerView: View, slideOffset: Float) {

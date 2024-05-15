@@ -12,8 +12,8 @@
         style="@style/GlobalTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:endIconTint="@color/text_color_edittext_enable_disable"
-        app:startIconTint="@color/text_color_edittext_enable_disable">
+        app:endIconTint="@color/helper_text_color_edittext_enable_disable"
+        app:startIconTint="@color/helper_text_color_edittext_enable_disable">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditText"

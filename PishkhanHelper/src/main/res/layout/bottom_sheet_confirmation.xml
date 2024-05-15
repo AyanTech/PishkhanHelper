@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/text_black"
+        android:textColor="@color/helper_text_black"
         tools:text="@string/delete_confirmation" />
 
     <LinearLayout

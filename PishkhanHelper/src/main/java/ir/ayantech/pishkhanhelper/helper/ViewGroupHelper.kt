@@ -21,8 +21,8 @@ fun ViewGroup.changeBackgroundDrawableTint(
 
 fun ViewGroup.setBackground(
     isEven: Boolean,
-    @ColorRes evenColor: Int = R.color.row_key_value_back_even_position,
-    @ColorRes oddColor: Int = R.color.row_key_value_back_odd_position
+    @ColorRes evenColor: Int = R.color.helper_row_key_value_back_even_position,
+    @ColorRes oddColor: Int = R.color.helper_row_key_value_back_odd_position
 ) {
     setBackgroundColor(ContextCompat.getColor(context, if (isEven) evenColor else oddColor))
 }

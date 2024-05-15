@@ -113,7 +113,7 @@ var DURATION = 250L
 fun TextView.expand(container: LinearLayout) {
     val bounds = Rect()
     container.background =
-        ContextCompat.getDrawable(context, R.drawable.background_radius_12)
+        ContextCompat.getDrawable(context, R.drawable.helper_background_radius_12)
     paint.apply {
         getTextBounds(text.toString(), 0, text.length, bounds)
         ValueAnimator.ofInt(0, bounds.width() + paddingStart + 10).apply {

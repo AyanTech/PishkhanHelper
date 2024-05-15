@@ -29,13 +29,13 @@ fun ViewBinding.initButtonOutlined(
             val gradientDrawable = GradientDrawable()
             gradientDrawable.setStroke(context.getDimensionInt(R.dimen.margin_1), tint)
             gradientDrawable.cornerRadius = context.getDimension(R.dimen.margin_12)
-            gradientDrawable.setColor(getColor(context, R.color.transparent))
+            gradientDrawable.setColor(getColor(context, R.color.helper_transparent))
 
             val gradientDrawableDefault = GradientDrawable()
             gradientDrawableDefault.setStroke(context.getDimensionInt(R.dimen.margin_1), tint)
-            gradientDrawableDefault.setColor(getColor(context, R.color.transparent))
+            gradientDrawableDefault.setColor(getColor(context, R.color.helper_transparent))
             gradientDrawableDefault.cornerRadius = context.getDimension(R.dimen.margin_12)
-            gradientDrawableDefault.setColor(getColor(context, R.color.transparent))
+            gradientDrawableDefault.setColor(getColor(context, R.color.helper_transparent))
 
             val stateListDrawable = StateListDrawable()
             stateListDrawable.addState(

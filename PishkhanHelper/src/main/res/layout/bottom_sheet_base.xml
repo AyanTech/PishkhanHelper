@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="@dimen/margin_16"
         android:layout_toStartOf="@id/closeIv"
-        android:textColor="@color/text_black"
+        android:textColor="@color/helper_text_black"
         tools:text="تیتر باتم شیت" />
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -26,8 +26,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="@dimen/margin_16"
-        app:srcCompat="@drawable/ic_close"
-        app:tint="@color/text_black" />
+        app:srcCompat="@drawable/helper_ic_close"
+        app:tint="@color/helper_text_black" />
 
     <FrameLayout
         android:id="@+id/containerFl"

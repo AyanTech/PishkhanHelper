@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ir.ayantech.pishkhanhelper.R
+import ir.ayantech.pishkhanhelper.components.initButtonFilled
+import ir.ayantech.pishkhanhelper.components.initButtonOutlined
 import ir.ayantech.pishkhanhelper.databinding.BottomSheetRatingBinding
 import ir.ayantech.pishkhanhelper.rate.showRatingIntent
 import ir.ayantech.pishkhanhelper.storage.SavedData
@@ -26,7 +28,7 @@ class MarketRatingBottomSheet(
         super.onCreate()
 
         binding.apply {
-            yesBtn.setOnClickListener {
+            yesBtn.initButtonFilled(btnText = getString(R.string.rate)) {
                 activity.showRatingIntent(
                     applicationId = applicationId,
                     marketName = marketName
@@ -35,7 +37,7 @@ class MarketRatingBottomSheet(
                 }
                 onButtonClicked(hasRated = true)
             }
-            laterBtn.setOnClickListener {
+            laterBtn.initButtonOutlined(context = activity, btnText = getString(R.string.later)) {
                 onButtonClicked(hasRated = false)
             }
         }

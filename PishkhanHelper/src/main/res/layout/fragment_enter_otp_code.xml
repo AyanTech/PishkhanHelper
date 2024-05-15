@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color">
+    android:background="@color/helper_background_color">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/loginToolbarCl"
@@ -27,7 +27,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/background_top_radius_16"
+        android:background="@drawable/helper_background_top_radius_16"
         android:paddingStart="@dimen/margin_16"
         android:paddingEnd="@dimen/margin_16"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,7 +36,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/enterOtpCodeTitleTv"
             style="@style/Title"
-            android:textColor="@color/text_black"
+            android:textColor="@color/helper_text_black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_24"
@@ -48,7 +48,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/enterOtpCodeDescriptionTv"
             style="@style/Text2Regular"
-            android:textColor="@color/ph_gray4"
+            android:textColor="@color/helper_gray4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_12"
@@ -66,7 +66,7 @@
             android:layout_marginTop="@dimen/margin_12"
             android:text="@string/edit_phone_number"
             android:textAlignment="viewStart"
-            android:textColor="@color/color_primary"
+            android:textColor="@color/helper_color_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/enterOtpCodeDescriptionTv" />
 
@@ -89,7 +89,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/resendOtpCodeTv"
             style="@style/Text2Light"
-            android:textColor="@color/ph_gray3"
+            android:textColor="@color/helper_gray3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_12"

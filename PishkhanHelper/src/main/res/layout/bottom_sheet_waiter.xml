@@ -11,7 +11,7 @@
         android:layout_height="@dimen/margin_74"
         android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/ic_logo"
-        app:tint="@color/color_primary" />
+        app:tint="@color/helper_color_primary" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/descriptionTv"
@@ -22,7 +22,7 @@
         android:layout_marginTop="@dimen/margin_8"
         android:gravity="center"
         android:text="@string/please_wait_for_response"
-        android:textColor="@color/text_black" />
+        android:textColor="@color/helper_text_black" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/cancelTv"
@@ -35,6 +35,6 @@
         android:gravity="center"
         android:padding="@dimen/margin_8"
         android:text="@string/cancel"
-        android:textColor="@color/state_error" />
+        android:textColor="@color/helper_state_error" />
 
 </RelativeLayout>

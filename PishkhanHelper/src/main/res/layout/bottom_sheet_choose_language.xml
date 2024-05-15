@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/ic_choose_lang"
+        android:src="@drawable/helper_ic_choose_lang"
         android:visibility="gone" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -21,7 +21,7 @@
         android:layout_below="@id/img_header"
         android:layout_alignParentTop="true"
         android:text="@string/tv_please_choose_prefer_language"
-        android:textColor="@color/ph_gray2" />
+        android:textColor="@color/helper_gray2" />
 
 
     <RadioGroup
@@ -37,9 +37,9 @@
             android:id="@+id/persian_lang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_radius_12"
+            android:background="@drawable/helper_background_radius_12"
             android:button="@null"
-            android:drawableStart="@drawable/bg_radio_button"
+            android:drawableStart="@drawable/helper_bg_radio_button"
             android:drawablePadding="@dimen/margin_12"
             android:paddingHorizontal="@dimen/margin_16"
             android:paddingVertical="@dimen/margin_10"
@@ -50,9 +50,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_8"
-            android:background="@drawable/background_radius_12"
+            android:background="@drawable/helper_background_radius_12"
             android:button="@null"
-            android:drawableStart="@drawable/bg_radio_button"
+            android:drawableStart="@drawable/helper_bg_radio_button"
             android:drawablePadding="@dimen/margin_12"
             android:paddingHorizontal="@dimen/margin_16"
             android:paddingVertical="@dimen/margin_10"
