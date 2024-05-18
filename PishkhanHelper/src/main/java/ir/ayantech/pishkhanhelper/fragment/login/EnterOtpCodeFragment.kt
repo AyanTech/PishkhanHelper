@@ -36,6 +36,7 @@ abstract class EnterOtpCodeFragment : WhyGoogleFragment<FragmentEnterOtpCodeBind
 
     private fun initViews() {
         accessViews {
+            otpCodeInput
             otpCodeInput.initOtpCodeInputComponent(
                 activity = requireActivity(),
                 doAfterFilled = { hasFilled ->
