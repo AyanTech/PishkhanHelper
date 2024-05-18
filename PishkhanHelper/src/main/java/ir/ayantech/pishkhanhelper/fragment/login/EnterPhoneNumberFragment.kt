@@ -3,6 +3,7 @@ package ir.ayantech.pishkhanhelper.fragment.login
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import ir.ayantech.pishkhanhelper.R
+import ir.ayantech.pishkhanhelper.components.getInputComponentText
 import ir.ayantech.pishkhanhelper.components.getText
 import ir.ayantech.pishkhanhelper.components.initButtonFilled
 import ir.ayantech.pishkhanhelper.components.initPhoneNumberInputComponent
@@ -24,7 +25,7 @@ abstract class EnterPhoneNumberFragment : WhyGoogleFragment<FragmentEnterPhoneNu
 
     override fun onResume() {
         super.onResume()
-        if (binding.phoneNumberInput.getText().isNotEmpty()) {
+        if (binding.phoneNumberInput.getInputComponentText().isNotEmpty()) {
             binding.phoneNumberInput.requestFocusInputComponent()
             requireActivity().showKeyboard()
         }
@@ -60,7 +61,7 @@ abstract class EnterPhoneNumberFragment : WhyGoogleFragment<FragmentEnterPhoneNu
     }
 
     private fun checkPhoneNumber() {
-        phoneNumber = binding.phoneNumberInput.getText()
+        phoneNumber = binding.phoneNumberInput.getInputComponentText()
         if (phoneNumber.isEmpty() || phoneNumber.length < 10) {
             binding.phoneNumberInput.setInputComponentError(getString(R.string.enter_your_phone_number))
         } else {

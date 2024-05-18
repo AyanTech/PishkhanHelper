@@ -47,7 +47,7 @@ fun View.initInputComponent(
 }
 
 @SuppressLint("ClickableViewAccessibility")
-fun ViewBinding.initInputComponent(
+fun ComponentInputBinding.initInputComponent(
     context: Context,
     hint: String? = null,
     text: String? = null,
@@ -67,133 +67,166 @@ fun ViewBinding.initInputComponent(
 //    @DimenRes startIconPadding: Int? = null,
 //    @DimenRes endIconPadding: Int? = null,
 ) {
-    (this as? ComponentInputBinding)?.let {
-        backgroundTint?.let {
-            textInputLayout.boxBackgroundColor = getColor(context, backgroundTint)
-        }
-        textInputEditText.apply {
-            this.hint = hint
-            setText(text)
+    backgroundTint?.let {
+        textInputLayout.boxBackgroundColor = getColor(context, backgroundTint)
+    }
+    textInputEditText.apply {
+        this.hint = hint
+        setText(text)
 
-            this.inputType = inputType
+        this.inputType = inputType
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                setTextAppearance(R.style.GlobalTextInputEditText)
-            }
-
-            maxLength?.let { setMaxLength(it) }
-
-            textAlignment?.let {
-                setTextAlignment(textAlignment)
-                if (textAlignment == View.TEXT_ALIGNMENT_VIEW_START)
-                    textInputEditText.updatePadding(
-                        0,
-                        0,
-                        context.getDimensionInt(R.dimen.margin_40),
-                        0
-                    )
-
-                if (textAlignment == View.TEXT_ALIGNMENT_VIEW_END)
-                    textInputEditText.updatePadding(
-                        0,
-                        0,
-                        context.getDimensionInt(R.dimen.margin_40),
-                        0
-                    )
-            }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            setTextAppearance(R.style.GlobalTextInputEditText)
         }
 
-        textInputLayout.apply {
-            this.helperText = helperText
+        maxLength?.let { setMaxLength(it) }
+
+        textAlignment?.let {
+            setTextAlignment(textAlignment)
+            if (textAlignment == View.TEXT_ALIGNMENT_VIEW_START)
+                textInputEditText.updatePadding(
+                    0,
+                    0,
+                    context.getDimensionInt(R.dimen.margin_40),
+                    0
+                )
+
+            if (textAlignment == View.TEXT_ALIGNMENT_VIEW_END)
+                textInputEditText.updatePadding(
+                    0,
+                    0,
+                    context.getDimensionInt(R.dimen.margin_40),
+                    0
+                )
         }
+    }
+
+    textInputLayout.apply {
+        this.helperText = helperText
     }
 }
 
-fun ViewBinding.initPhoneNumberInputComponent(
+fun View.initPhoneNumberInputComponent(
     activity: Activity,
     doAfterFilled: BooleanCallBack? = null,
     onEditorActionListener: SimpleCallBack? = null
 ) {
-    (this as? ComponentInputBinding)?.let {
-        initInputComponent(
-            context = activity,
-            hint = activity.getString(R.string.phone_number),
-            inputType = InputType.TYPE_CLASS_PHONE,
-            maxLength = 11
-        )
-        textInputEditText.textChanges {
-            doAfterFilled?.invoke(it.length == 11)
+    ComponentInputBinding.bind(this).initPhoneNumberInputComponent(
+        activity,
+        doAfterFilled,
+        onEditorActionListener,
+    )
+}
+
+fun ComponentInputBinding.initPhoneNumberInputComponent(
+    activity: Activity,
+    doAfterFilled: BooleanCallBack? = null,
+    onEditorActionListener: SimpleCallBack? = null
+) {
+    initInputComponent(
+        context = activity,
+        hint = activity.getString(R.string.phone_number),
+        inputType = InputType.TYPE_CLASS_PHONE,
+        maxLength = 11
+    )
+    textInputEditText.textChanges {
+        doAfterFilled?.invoke(it.length == 11)
+    }
+    textInputEditText.imeOptions = EditorInfo.IME_ACTION_SEND
+    textInputEditText.setOnEditorActionListener { v, actionId, event ->
+        if (actionId == EditorInfo.IME_ACTION_SEND) {
+            onEditorActionListener?.invoke()
         }
-        textInputEditText.imeOptions = EditorInfo.IME_ACTION_SEND
-        textInputEditText.setOnEditorActionListener { v, actionId, event ->
-            if (actionId == EditorInfo.IME_ACTION_SEND) {
-                onEditorActionListener?.invoke()
-            }
-            true
-        }
+        true
     }
 }
 
-fun ViewBinding.initOtpCodeInputComponent(
+fun View.initOtpCodeInputComponent(
     activity: Activity,
     doAfterFilled: BooleanCallBack? = null,
     onEditorActionListener: SimpleCallBack? = null,
     maxLength: Int? = null
 ) {
-    (this as? ComponentInputBinding)?.let {
-        initInputComponent(
-            context = activity,
-            hint = activity.getString(R.string.otp_code),
-            inputType = InputType.TYPE_CLASS_NUMBER,
-            maxLength = maxLength ?: 4
-        )
-        textInputEditText.textChanges {
-            doAfterFilled?.invoke(it.length == (maxLength ?: 4))
+    ComponentInputBinding.bind(this).initOtpCodeInputComponent(
+        activity,
+        doAfterFilled,
+        onEditorActionListener,
+        maxLength,
+    )
+}
+
+fun ComponentInputBinding.initOtpCodeInputComponent(
+    activity: Activity,
+    doAfterFilled: BooleanCallBack? = null,
+    onEditorActionListener: SimpleCallBack? = null,
+    maxLength: Int? = null
+) {
+    initInputComponent(
+        context = activity,
+        hint = activity.getString(R.string.otp_code),
+        inputType = InputType.TYPE_CLASS_NUMBER,
+        maxLength = maxLength ?: 4
+    )
+    textInputEditText.textChanges {
+        doAfterFilled?.invoke(it.length == (maxLength ?: 4))
+    }
+    textInputEditText.imeOptions = EditorInfo.IME_ACTION_DONE
+    textInputEditText.setOnEditorActionListener { _, actionId, _ ->
+        if (actionId == EditorInfo.IME_ACTION_DONE) {
+            onEditorActionListener?.invoke()
         }
-        textInputEditText.imeOptions = EditorInfo.IME_ACTION_DONE
-        textInputEditText.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_DONE) {
-                onEditorActionListener?.invoke()
-            }
-            true
-        }
+        true
     }
 }
 
-fun ViewBinding.getInputComponentText() = (this as? ComponentInputBinding)?.textInputEditText?.text?.toString() ?: ""
+fun View.getInputComponentText() = ComponentInputBinding.bind(this).getInputComponentText()
 
-fun ViewBinding.setInputComponentText(text: String?) {
-    (this as? ComponentInputBinding)?.let {
-        textInputEditText.setText(text)
-    }
+fun ComponentInputBinding.getInputComponentText() = textInputEditText.text?.toString() ?: ""
+
+fun View.setInputComponentText(text: String?) {
+    ComponentInputBinding.bind(this).setInputComponentText(text)
 }
 
-fun ViewBinding.placeInputComponentCursorToEnd() {
-    (this as? ComponentInputBinding)?.let {
-        textInputEditText.placeCursorToEnd()
-    }
+fun ComponentInputBinding.setInputComponentText(text: String?) {
+    textInputEditText.setText(text)
 }
 
-//fun ViewBinding.changeVisibility(show: Boolean) {
+fun View.placeInputComponentCursorToEnd() {
+    ComponentInputBinding.bind(this).placeInputComponentCursorToEnd()
+}
+
+fun ComponentInputBinding.placeInputComponentCursorToEnd() {
+    textInputEditText.placeCursorToEnd()
+}
+
+//fun ComponentInputBinding.changeVisibility(show: Boolean) {
 //    root.changeVisibility(show = show)
 //}
 
-fun ViewBinding.setInputComponentAfterTextChangesListener(afterTextChangedCallback: AfterTextChangedCallback) {
-    (this as? ComponentInputBinding)?.let {
-        textInputEditText.textChanges(afterTextChangedCallback = afterTextChangedCallback)
-    }
+fun View.setInputComponentAfterTextChangesListener(afterTextChangedCallback: AfterTextChangedCallback) {
+    ComponentInputBinding.bind(this)
+        .setInputComponentAfterTextChangesListener(afterTextChangedCallback)
 }
 
-fun ViewBinding.setInputComponentError(text: String?) {
-    (this as? ComponentInputBinding)?.let {
-        textInputLayout.error = text
-    }
+fun ComponentInputBinding.setInputComponentAfterTextChangesListener(afterTextChangedCallback: AfterTextChangedCallback) {
+    textInputEditText.textChanges(afterTextChangedCallback = afterTextChangedCallback)
 }
 
-fun ViewBinding.requestFocusInputComponent(selectAll: Boolean = true) {
-    (this as? ComponentInputBinding)?.let {
-        textInputEditText.requestFocus()
-        if (selectAll)
-            textInputEditText.selectAll()
-    }
+fun View.setInputComponentError(text: String?) {
+    ComponentInputBinding.bind(this).setInputComponentError(text)
+}
+
+fun ComponentInputBinding.setInputComponentError(text: String?) {
+    textInputLayout.error = text
+}
+
+fun View.requestFocusInputComponent(selectAll: Boolean = true) {
+    ComponentInputBinding.bind(this).requestFocusInputComponent(selectAll)
+}
+
+fun ComponentInputBinding.requestFocusInputComponent(selectAll: Boolean = true) {
+    textInputEditText.requestFocus()
+    if (selectAll)
+        textInputEditText.selectAll()
 }

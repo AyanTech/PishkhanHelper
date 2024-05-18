@@ -8,30 +8,42 @@ import ir.ayantech.pishkhanhelper.helper.changeEnable
 
 private var mLastClickTime: Long = 0
 
-fun ViewBinding.initButtonFilled(
+fun View.initButtonFilled(
     btnText: String,
     isEnable: Boolean = true,
     btnOnClick: View.OnClickListener? = null
 ) {
-    (this as? ComponentButtonFilledBinding)?.let {
-        filledButton.text = btnText
-        filledButton.setOnClickListener {
-            if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
-                return@setOnClickListener
-            }
-            mLastClickTime = SystemClock.elapsedRealtime()
-            btnOnClick?.onClick(it)
-        }
-        changeEnable(isEnable = isEnable)
-        filledButton.setHorizontallyScrolling(true)
-        filledButton.isSelected = true
-    }
+    ComponentButtonFilledBinding.bind(this).initButtonFilled(
+        btnText,
+        isEnable,
+        btnOnClick,
+    )
 }
 
-fun ViewBinding.performButtonFilledClick() {
-    (this as? ComponentButtonFilledBinding)?.let {
-        filledButton.performClick()
+fun ComponentButtonFilledBinding.initButtonFilled(
+    btnText: String,
+    isEnable: Boolean = true,
+    btnOnClick: View.OnClickListener? = null
+) {
+    filledButton.text = btnText
+    filledButton.setOnClickListener {
+        if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
+            return@setOnClickListener
+        }
+        mLastClickTime = SystemClock.elapsedRealtime()
+        btnOnClick?.onClick(it)
     }
+    changeEnable(isEnable = isEnable)
+    filledButton.setHorizontallyScrolling(true)
+    filledButton.isSelected = true
+}
+
+fun View.performButtonFilledClick() {
+    ComponentButtonFilledBinding.bind(this).performButtonFilledClick()
+}
+
+fun ComponentButtonFilledBinding.performButtonFilledClick() {
+    filledButton.performClick()
 }
 
 //fun ViewBinding.changeEnable(
@@ -42,10 +54,14 @@ fun ViewBinding.performButtonFilledClick() {
 //    }
 //}
 
-fun ViewBinding.setFilledButtonText(text: String?) {
-    (this as? ComponentButtonFilledBinding)?.let {
-        filledButton.text = text
-    }
+fun View.setFilledButtonText(text: String?) {
+    ComponentButtonFilledBinding.bind(this).setFilledButtonText(text)
 }
 
-fun ViewBinding.getText() = (this as? ComponentButtonFilledBinding)?.filledButton?.text.toString()
+fun ComponentButtonFilledBinding.setFilledButtonText(text: String?) {
+    filledButton.text = text
+}
+
+fun View.getText() = ComponentButtonFilledBinding.bind(this).getText()
+
+fun ComponentButtonFilledBinding.getText() = filledButton.text.toString()

@@ -13,40 +13,51 @@ import ir.ayantech.pishkhanhelper.databinding.ComponentButtonOutlinedBinding
 import ir.ayantech.pishkhanhelper.helper.getDimension
 import ir.ayantech.pishkhanhelper.helper.getDimensionInt
 
-
-fun ViewBinding.initButtonOutlined(
+fun View.initButtonOutlined(
     context: Context,
     btnText: String,
     tint: Int? = null,
     btnOnClick: View.OnClickListener? = null
 ) {
-    (this as? ComponentButtonOutlinedBinding)?.let {
-        outlinedButton.text = btnText
-        outlinedButton.setOnClickListener(btnOnClick)
-        tint?.let {
-            outlinedButton.setTextColor(ColorStateList.valueOf(tint))
+    ComponentButtonOutlinedBinding.bind(this).initButtonOutlined(
+        context,
+        btnText,
+        tint,
+        btnOnClick,
+    )
+}
 
-            val gradientDrawable = GradientDrawable()
-            gradientDrawable.setStroke(context.getDimensionInt(R.dimen.margin_1), tint)
-            gradientDrawable.cornerRadius = context.getDimension(R.dimen.margin_12)
-            gradientDrawable.setColor(getColor(context, R.color.helper_transparent))
+fun ComponentButtonOutlinedBinding.initButtonOutlined(
+    context: Context,
+    btnText: String,
+    tint: Int? = null,
+    btnOnClick: View.OnClickListener? = null
+) {
+    outlinedButton.text = btnText
+    outlinedButton.setOnClickListener(btnOnClick)
+    tint?.let {
+        outlinedButton.setTextColor(ColorStateList.valueOf(tint))
 
-            val gradientDrawableDefault = GradientDrawable()
-            gradientDrawableDefault.setStroke(context.getDimensionInt(R.dimen.margin_1), tint)
-            gradientDrawableDefault.setColor(getColor(context, R.color.helper_transparent))
-            gradientDrawableDefault.cornerRadius = context.getDimension(R.dimen.margin_12)
-            gradientDrawableDefault.setColor(getColor(context, R.color.helper_transparent))
+        val gradientDrawable = GradientDrawable()
+        gradientDrawable.setStroke(context.getDimensionInt(R.dimen.margin_1), tint)
+        gradientDrawable.cornerRadius = context.getDimension(R.dimen.margin_12)
+        gradientDrawable.setColor(getColor(context, R.color.helper_transparent))
 
-            val stateListDrawable = StateListDrawable()
-            stateListDrawable.addState(
-                intArrayOf(android.R.attr.state_activated),
-                gradientDrawableDefault
-            )
+        val gradientDrawableDefault = GradientDrawable()
+        gradientDrawableDefault.setStroke(context.getDimensionInt(R.dimen.margin_1), tint)
+        gradientDrawableDefault.setColor(getColor(context, R.color.helper_transparent))
+        gradientDrawableDefault.cornerRadius = context.getDimension(R.dimen.margin_12)
+        gradientDrawableDefault.setColor(getColor(context, R.color.helper_transparent))
 
-            stateListDrawable.addState(StateSet.WILD_CARD, gradientDrawable)
-            outlinedButton.background = stateListDrawable
-            outlinedButton.isSelected = true
-        }
+        val stateListDrawable = StateListDrawable()
+        stateListDrawable.addState(
+            intArrayOf(android.R.attr.state_activated),
+            gradientDrawableDefault
+        )
+
+        stateListDrawable.addState(StateSet.WILD_CARD, gradientDrawable)
+        outlinedButton.background = stateListDrawable
+        outlinedButton.isSelected = true
     }
 }
 
@@ -60,8 +71,10 @@ fun ViewBinding.initButtonOutlined(
 //    outlinedButton.changeVisibility(show = isVisible)
 //}
 
-fun ViewBinding.setButtonOutlinedText(text: String) {
-    (this as? ComponentButtonOutlinedBinding)?.let {
-        outlinedButton.text = text
-    }
+fun View.setButtonOutlinedText(text: String) {
+    ComponentButtonOutlinedBinding.bind(this).setButtonOutlinedText(text)
+}
+
+fun ComponentButtonOutlinedBinding.setButtonOutlinedText(text: String) {
+    outlinedButton.text = text
 }

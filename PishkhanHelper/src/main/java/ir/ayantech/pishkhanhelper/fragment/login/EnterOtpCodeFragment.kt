@@ -4,6 +4,7 @@ import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import ir.ayantech.pishkhanhelper.R
+import ir.ayantech.pishkhanhelper.components.getInputComponentText
 import ir.ayantech.pishkhanhelper.components.getText
 import ir.ayantech.pishkhanhelper.components.initButtonFilled
 import ir.ayantech.pishkhanhelper.components.initOtpCodeInputComponent
@@ -66,7 +67,7 @@ abstract class EnterOtpCodeFragment : WhyGoogleFragment<FragmentEnterOtpCodeBind
     }
 
     private fun checkOtpCode() {
-        val otpCode = binding.otpCodeInput.getText()
+        val otpCode = binding.otpCodeInput.getInputComponentText()
         if (otpCode.isEmpty() || otpCode.length < 4) {
             binding.otpCodeInput.setInputComponentError(getString(R.string.enter_otp_code))
         } else {
