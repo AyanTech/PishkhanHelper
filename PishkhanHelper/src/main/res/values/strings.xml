@@ -49,4 +49,6 @@
 
     <string name="open" translatable="false">Open</string>
     <string name="close" translatable="false">Close</string>
+
+    <string name="helper_no_transaction_message">شما تاکنون تراکنشی نداشته‌اید</string>
 </resources>

@@ -51,4 +51,6 @@
 
     <color name="helper_row_key_value_back_even_position">@color/white</color>
     <color name="helper_row_key_value_back_odd_position">@color/helper_gray8</color>
+
+    <color name="helper_base_motion_layout_background_color">@color/helper_background_color</color>
 </resources>

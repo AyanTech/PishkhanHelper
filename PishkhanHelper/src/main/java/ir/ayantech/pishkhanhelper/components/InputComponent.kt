@@ -24,8 +24,14 @@ import ir.ayantech.pishkhanhelper.helper.textChanges
 import ir.ayantech.whygoogle.helper.BooleanCallBack
 import ir.ayantech.whygoogle.helper.SimpleCallBack
 
+fun View.initInputComponent() {
+    ComponentInputBinding.bind(this).apply {
+        initInputComponent()
+    }
+}
+
 @SuppressLint("ClickableViewAccessibility")
-fun ViewBinding.initInputComponent(
+fun View.initInputComponent(
     context: Context,
     hint: String? = null,
     text: String? = null,
@@ -45,7 +51,7 @@ fun ViewBinding.initInputComponent(
     @DimenRes startIconPadding: Int? = null,
     @DimenRes endIconPadding: Int? = null,
 ) {
-    (this as? ComponentInputBinding)?.let {
+    ComponentInputBinding.bind(this).apply {
         backgroundTint?.let {
             textInputLayout.boxBackgroundColor = getColor(context, backgroundTint)
         }
@@ -87,12 +93,12 @@ fun ViewBinding.initInputComponent(
     }
 }
 
-fun ViewBinding.initPhoneNumberInputComponent(
+fun View.initPhoneNumberInputComponent(
     activity: Activity,
     doAfterFilled: BooleanCallBack? = null,
     onEditorActionListener: SimpleCallBack? = null
 ) {
-    (this as? ComponentInputBinding)?.let {
+    ComponentInputBinding.bind(this).apply {
         initInputComponent(
             context = activity,
             hint = activity.getString(R.string.phone_number),
@@ -112,13 +118,13 @@ fun ViewBinding.initPhoneNumberInputComponent(
     }
 }
 
-fun ViewBinding.initOtpCodeInputComponent(
+fun View.initOtpCodeInputComponent(
     activity: Activity,
     doAfterFilled: BooleanCallBack? = null,
     onEditorActionListener: SimpleCallBack? = null,
     maxLength: Int? = null
 ) {
-    (this as? ComponentInputBinding)?.let {
+    ComponentInputBinding.bind(this).apply {
         initInputComponent(
             context = activity,
             hint = activity.getString(R.string.otp_code),
@@ -138,16 +144,16 @@ fun ViewBinding.initOtpCodeInputComponent(
     }
 }
 
-fun ViewBinding.getInputComponentText() = (this as? ComponentInputBinding)?.textInputEditText?.text?.toString() ?: ""
+fun View.getInputComponentText() = ComponentInputBinding.bind(this).textInputEditText.text?.toString() ?: ""
 
-fun ViewBinding.setInputComponentText(text: String?) {
-    (this as? ComponentInputBinding)?.let {
+fun View.setInputComponentText(text: String?) {
+    ComponentInputBinding.bind(this).apply {
         textInputEditText.setText(text)
     }
 }
 
-fun ViewBinding.placeInputComponentCursorToEnd() {
-    (this as? ComponentInputBinding)?.let {
+fun View.placeInputComponentCursorToEnd() {
+    ComponentInputBinding.bind(this).apply {
         textInputEditText.placeCursorToEnd()
     }
 }
@@ -156,20 +162,20 @@ fun ViewBinding.placeInputComponentCursorToEnd() {
 //    root.changeVisibility(show = show)
 //}
 
-fun ViewBinding.setInputComponentAfterTextChangesListener(afterTextChangedCallback: AfterTextChangedCallback) {
-    (this as? ComponentInputBinding)?.let {
+fun View.setInputComponentAfterTextChangesListener(afterTextChangedCallback: AfterTextChangedCallback) {
+    ComponentInputBinding.bind(this).apply {
         textInputEditText.textChanges(afterTextChangedCallback = afterTextChangedCallback)
     }
 }
 
-fun ViewBinding.setInputComponentError(text: String?) {
-    (this as? ComponentInputBinding)?.let {
+fun View.setInputComponentError(text: String?) {
+    ComponentInputBinding.bind(this).apply {
         textInputLayout.error = text
     }
 }
 
-fun ViewBinding.requestFocusInputComponent(selectAll: Boolean = true) {
-    (this as? ComponentInputBinding)?.let {
+fun View.requestFocusInputComponent(selectAll: Boolean = true) {
+    ComponentInputBinding.bind(this).apply {
         textInputEditText.requestFocus()
         if (selectAll)
             textInputEditText.selectAll()

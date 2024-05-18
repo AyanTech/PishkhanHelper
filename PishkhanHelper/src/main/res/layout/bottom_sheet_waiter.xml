@@ -10,7 +10,7 @@
         android:layout_width="@dimen/margin_74"
         android:layout_height="@dimen/margin_74"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/ic_logo"
+        app:srcCompat="@drawable/helper_ic_logo"
         app:tint="@color/helper_color_primary" />
 
     <androidx.appcompat.widget.AppCompatTextView

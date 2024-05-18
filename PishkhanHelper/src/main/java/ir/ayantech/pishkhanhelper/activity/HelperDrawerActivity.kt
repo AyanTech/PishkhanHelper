@@ -115,9 +115,9 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
     abstract fun initialize(initViewsCallback: SimpleCallBack)
     abstract val transactionHistoryFragment: WhyGoogleFragment<*>?
     abstract val loginFragment: EnterPhoneNumberFragment
-    abstract val mainFragment: WhyGoogleFragment<*>
     abstract val handleBackIvVisibilityOnTopFragmentChanged: (whyGoogleFragment: WhyGoogleFragment<*>) -> Boolean
     abstract val handleToolbarRlVisibilityOnTopFragmentChanged: (whyGoogleFragment: WhyGoogleFragment<*>) -> Boolean
+    abstract val handleDrawerLayoutLockOnTopFragmentChanged: (whyGoogleFragment: WhyGoogleFragment<*>) -> Boolean
     abstract val getUserPhoneNumber: () -> String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -320,7 +320,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
         binding.menuIv.changeVisibility(show = !binding.backIv.isVisible())
         binding.toolbarRl.changeVisibility(show = handleToolbarRlVisibilityOnTopFragmentChanged(whyGoogleFragment))
         delayed {
-            if (whyGoogleFragment == mainFragment)
+            if (handleDrawerLayoutLockOnTopFragmentChanged(whyGoogleFragment))
                 binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
             else
                 binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
