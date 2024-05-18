@@ -8,11 +8,11 @@ import ir.ayantech.pishkhanhelper.databinding.BottomSheetChooseLanguageBinding
 import ir.ayantech.pishkhanhelper.storage.SavedData
 import ir.ayantech.whygoogle.helper.StringCallBack
 
-class ChooseLanguageBottomSheet(
+open class HelperChooseLanguageBottomSheet(
     context: Context,
     private val isFirstTimeOpen: Boolean,
     private val onLanguageSelected: StringCallBack
-): BaseBottomSheet<BottomSheetChooseLanguageBinding>(context) {
+): HelperBaseBottomSheet<BottomSheetChooseLanguageBinding>(context) {
 
     override val title: String
         get() = getString(R.string.choose_language)

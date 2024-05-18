@@ -8,10 +8,10 @@ import ir.ayantech.pishkhanhelper.databinding.BottomSheetWaiterBinding
 import ir.ayantech.whygoogle.helper.SimpleCallBack
 
 
-class WaiterBottomSheet(
+open class HelperWaiterBottomSheet(
     private val context: Context,
     private val onCancelBtnClicked: SimpleCallBack
-) : BaseBottomSheet<BottomSheetWaiterBinding>(context) {
+) : HelperBaseBottomSheet<BottomSheetWaiterBinding>(context) {
 
     override val title: String?
         get() = null

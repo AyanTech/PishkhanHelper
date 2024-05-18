@@ -17,7 +17,7 @@ import ir.ayantech.whygoogle.helper.changeVisibility
 import ir.ayantech.whygoogle.helper.isNotNull
 import ir.ayantech.whygoogle.helper.viewBinding
 
-abstract class BaseBottomSheet<T : ViewBinding>(context: Context) : BottomSheetDialog(context) {
+abstract class HelperBaseBottomSheet<T : ViewBinding>(context: Context) : BottomSheetDialog(context) {
 
     val binding: T by viewBinding(binder)
 

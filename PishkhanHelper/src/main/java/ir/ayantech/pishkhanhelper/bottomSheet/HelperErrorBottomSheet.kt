@@ -7,12 +7,12 @@ import ir.ayantech.pishkhanhelper.components.initButtonFilled
 import ir.ayantech.pishkhanhelper.databinding.BottomSheetErrorBinding
 import ir.ayantech.whygoogle.helper.SimpleCallBack
 
-class ErrorBottomSheet(
+open class HelperErrorBottomSheet(
     context: Context,
     private val message: String,
     private val onErrorBottomSheetCancelled: SimpleCallBack? = null,
     private val retry: SimpleCallBack
-) : BaseBottomSheet<BottomSheetErrorBinding>(context) {
+) : HelperBaseBottomSheet<BottomSheetErrorBinding>(context) {
 
     override val title: String
         get() = ""

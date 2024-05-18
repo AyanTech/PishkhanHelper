@@ -14,10 +14,10 @@ import ir.ayantech.ayannetworking.ayanModel.FailureType
 import ir.ayantech.pishkhanhelper.PishkhanHelper
 import ir.ayantech.pishkhanhelper.R
 import ir.ayantech.pishkhanhelper.app.HelperApplication
-import ir.ayantech.pishkhanhelper.bottomSheet.ChooseLanguageBottomSheet
-import ir.ayantech.pishkhanhelper.bottomSheet.ConfirmationBottomSheet
-import ir.ayantech.pishkhanhelper.bottomSheet.ErrorBottomSheet
-import ir.ayantech.pishkhanhelper.bottomSheet.WaiterBottomSheet
+import ir.ayantech.pishkhanhelper.bottomSheet.HelperChooseLanguageBottomSheet
+import ir.ayantech.pishkhanhelper.bottomSheet.HelperConfirmationBottomSheet
+import ir.ayantech.pishkhanhelper.bottomSheet.HelperErrorBottomSheet
+import ir.ayantech.pishkhanhelper.bottomSheet.HelperWaiterBottomSheet
 import ir.ayantech.pishkhanhelper.databinding.HelperDrawerActivityBinding
 import ir.ayantech.pishkhanhelper.helper.hideKeyboard
 import ir.ayantech.pishkhanhelper.locale.currentLocale
@@ -53,7 +53,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
     val appInfo: AppInfo
         get() = (applicationContext as HelperApplication).appInfo
 
-    private var waiterBottomSheet: WaiterBottomSheet? = null
+    private var waiterBottomSheet: HelperWaiterBottomSheet? = null
 
     abstract fun logoutPishkhan()
 
@@ -70,7 +70,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
 
                 FailureType.CANCELED -> {
                     trying {
-                        ErrorBottomSheet(
+                        HelperErrorBottomSheet(
                             context = this@HelperDrawerActivity,
                             message = resources.getString(R.string.timeout_error_message),
                             retry = {
@@ -83,13 +83,13 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
                 else -> {
                     trying {
                         if (failure.failureCode.startsWith("GOP")) {
-                            ErrorBottomSheet(
+                            HelperErrorBottomSheet(
                                 context = this@HelperDrawerActivity,
                                 message = failure.failureMessage,
                                 retry = {}
                             ).show()
                         } else {
-                            ErrorBottomSheet(
+                            HelperErrorBottomSheet(
                                 context = this@HelperDrawerActivity,
                                 message = failure.failureMessage,
                                 retry = {
@@ -146,7 +146,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
     }
 
     private fun initWaiterBottomSheet() {
-        waiterBottomSheet = WaiterBottomSheet(this) {
+        waiterBottomSheet = HelperWaiterBottomSheet(this) {
             corePishkhan24AyanApi.cancelCalls()
             servicesPishkhan24AyanApi.cancelCalls()
         }
@@ -160,7 +160,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
 
     private fun handleAppLanguage() {
         if (SavedData.appLanguage.isEmpty()) {
-            ChooseLanguageBottomSheet(context = this, isFirstTimeOpen = true) { selectedLanguage ->
+            HelperChooseLanguageBottomSheet(context = this, isFirstTimeOpen = true) { selectedLanguage ->
                 onNewLanguageSelected(selectedLanguage)
             }.show()
         } else {
@@ -243,7 +243,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
             appLanguageRl.changeVisibility(show = appInfo.flavor == "playstore")
             appLanguageRl.setOnClickListener {
                 onMenuItemClicked {
-                    ChooseLanguageBottomSheet(
+                    HelperChooseLanguageBottomSheet(
                         context = this@HelperDrawerActivity,
                         isFirstTimeOpen = false
                     ) { selectedLanguage ->
@@ -305,7 +305,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
     }
 
     private fun logout() {
-        ConfirmationBottomSheet(
+        HelperConfirmationBottomSheet(
             context = this,
             description = R.string.logout_confirmation
         ) {

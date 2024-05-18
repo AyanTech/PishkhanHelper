@@ -14,12 +14,11 @@ import com.google.android.gms.tasks.Task
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
-import ir.ayantech.pishkhanhelper.bottomSheet.MarketRatingBottomSheet
+import ir.ayantech.pishkhanhelper.bottomSheet.HelperMarketRatingBottomSheet
 import ir.ayantech.pishkhanhelper.storage.SavedData
 import ir.ayantech.whygoogle.helper.BooleanCallBack
 import ir.ayantech.whygoogle.helper.openUrl
 import ir.ayantech.whygoogle.helper.trying
-import java.io.Serializable
 
 @StringDef("cafebazaar", "myket", "playstore", "galaxystore")
 @Retention(AnnotationRetention.SOURCE)
@@ -41,7 +40,7 @@ fun AppCompatActivity.showRatingIntent(applicationId: String, @MarketName market
 fun AppCompatActivity.showRatingBottomSheet(applicationId: String, marketName: String, callback: BooleanCallBack? = null) {
     if (!SavedData.userHasRated) {
         trying {
-            MarketRatingBottomSheet(
+            HelperMarketRatingBottomSheet(
                 activity = this,
                 applicationId = applicationId,
                 marketName = marketName,

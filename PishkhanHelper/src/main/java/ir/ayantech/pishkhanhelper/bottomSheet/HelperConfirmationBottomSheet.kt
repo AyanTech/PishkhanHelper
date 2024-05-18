@@ -9,11 +9,11 @@ import ir.ayantech.pishkhanhelper.components.initButtonOutlined
 import ir.ayantech.pishkhanhelper.databinding.BottomSheetConfirmationBinding
 import ir.ayantech.whygoogle.helper.SimpleCallBack
 
-class ConfirmationBottomSheet(
+open class HelperConfirmationBottomSheet(
     context: Context,
     @StringRes private val description: Int,
     private val onConfirmClicked: SimpleCallBack
-) : BaseBottomSheet<BottomSheetConfirmationBinding>(context) {
+) : HelperBaseBottomSheet<BottomSheetConfirmationBinding>(context) {
 
     override val binder: (LayoutInflater) -> BottomSheetConfirmationBinding
         get() = BottomSheetConfirmationBinding::inflate

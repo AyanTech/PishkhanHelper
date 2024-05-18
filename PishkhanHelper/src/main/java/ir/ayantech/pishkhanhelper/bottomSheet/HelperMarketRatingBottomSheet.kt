@@ -11,12 +11,12 @@ import ir.ayantech.pishkhanhelper.rate.showRatingIntent
 import ir.ayantech.pishkhanhelper.storage.SavedData
 import ir.ayantech.whygoogle.helper.BooleanCallBack
 
-class MarketRatingBottomSheet(
+open class HelperMarketRatingBottomSheet(
     private val activity: AppCompatActivity,
     private val applicationId: String,
     private val marketName: String,
     private val onOptionsClicked: BooleanCallBack?
-) : BaseBottomSheet<BottomSheetRatingBinding>(activity) {
+) : HelperBaseBottomSheet<BottomSheetRatingBinding>(activity) {
 
     override val binder: (LayoutInflater) -> BottomSheetRatingBinding
         get() = BottomSheetRatingBinding::inflate

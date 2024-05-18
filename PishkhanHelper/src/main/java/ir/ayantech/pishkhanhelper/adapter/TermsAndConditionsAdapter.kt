@@ -7,7 +7,7 @@ import ir.ayantech.pishkhanhelper.model.KeyValue
 import ir.ayantech.whygoogle.adapter.CommonAdapter
 import ir.ayantech.whygoogle.adapter.CommonViewHolder
 
-class TermsAndConditionsAdapter(
+open class TermsAndConditionsAdapter(
     items: List<KeyValue>
 ) : CommonAdapter<KeyValue, RowTermsAndConditionsBinding>(
     items = items
