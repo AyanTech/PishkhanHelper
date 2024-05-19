@@ -62,6 +62,6 @@ fun ComponentButtonFilledBinding.setFilledButtonText(text: String?) {
     filledButton.text = text
 }
 
-fun View.getText() = ComponentButtonFilledBinding.bind(this).getText()
+fun View.getTextButtonFilled() = ComponentButtonFilledBinding.bind(this).getTextButtonFilled()
 
-fun ComponentButtonFilledBinding.getText() = filledButton.text.toString()
+fun ComponentButtonFilledBinding.getTextButtonFilled() = filledButton.text.toString()

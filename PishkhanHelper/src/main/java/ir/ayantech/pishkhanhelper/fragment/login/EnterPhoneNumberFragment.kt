@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import ir.ayantech.pishkhanhelper.R
 import ir.ayantech.pishkhanhelper.components.getInputComponentText
-import ir.ayantech.pishkhanhelper.components.getText
 import ir.ayantech.pishkhanhelper.components.initButtonFilled
 import ir.ayantech.pishkhanhelper.components.initPhoneNumberInputComponent
 import ir.ayantech.pishkhanhelper.components.requestFocusInputComponent

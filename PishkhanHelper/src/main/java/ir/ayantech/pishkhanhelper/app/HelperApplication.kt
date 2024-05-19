@@ -31,7 +31,7 @@ abstract class HelperApplication : LocaleHelperApplication() {
             defaultBaseUrl = "https://core.pishkhan24.ayantech.ir/webservices/Core.svc/",
             timeout = 120,
             headers = hashMapOf("Accept-Language" to "fa"),
-            logLevel = if (BuildConfig.DEBUG) LogLevel.LOG_ALL else LogLevel.DO_NOT_LOG
+            logLevel = if (appInfo.isDebugMode) LogLevel.LOG_ALL else LogLevel.DO_NOT_LOG
         )
 
         servicesPishkhan24AyanApi = AyanApi(
@@ -40,7 +40,7 @@ abstract class HelperApplication : LocaleHelperApplication() {
             defaultBaseUrl = "https://services.pishkhan24.ayantech.ir/webservices/services.svc/",
             timeout = 120,
             headers = hashMapOf("Accept-Language" to "fa"),
-            logLevel = if (BuildConfig.DEBUG) LogLevel.LOG_ALL else LogLevel.DO_NOT_LOG
+            logLevel = if (appInfo.isDebugMode) LogLevel.LOG_ALL else LogLevel.DO_NOT_LOG
         )
 
         initializePishkhanSDK()

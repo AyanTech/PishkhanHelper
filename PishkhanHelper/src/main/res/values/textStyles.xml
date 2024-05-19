@@ -132,4 +132,23 @@
         <item name="android:singleLine">true</item>
     </style>
 
+    <style name="KeyLarge" parent="Text1Light">
+        <item name="android:textColor">@color/helper_text_key</item>
+    </style>
+
+    <style name="KeySmall" parent="Text2Light">
+        <item name="android:textColor">@color/helper_text_key</item>
+    </style>
+
+    <style name="ValueXLarge" parent="Text3Medium">
+        <item name="android:textColor">@color/helper_text_value</item>
+    </style>
+
+    <style name="ValueLarge" parent="Text2Regular">
+        <item name="android:textColor">@color/helper_text_value</item>
+    </style>
+
+    <style name="ValueSmall" parent="Text3Regular">
+        <item name="android:textColor">@color/helper_text_value</item>
+    </style>
 </resources>

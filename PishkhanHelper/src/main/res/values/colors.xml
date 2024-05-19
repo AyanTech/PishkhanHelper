@@ -53,4 +53,7 @@
     <color name="helper_row_key_value_back_odd_position">@color/helper_gray8</color>
 
     <color name="helper_base_motion_layout_background_color">@color/helper_background_color</color>
+
+    <color name="helper_text_key">@color/helper_gray3</color>
+    <color name="helper_text_value">@color/helper_text_black</color>
 </resources>

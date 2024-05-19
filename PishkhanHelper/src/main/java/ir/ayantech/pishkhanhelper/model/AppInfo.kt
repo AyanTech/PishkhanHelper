@@ -6,5 +6,6 @@ data class AppInfo(
     val applicationVersion: String,
     val applicationType: String,
     val flavor: String,
-    val applicationId: String
+    val applicationId: String,
+    val isDebugMode: Boolean
 )

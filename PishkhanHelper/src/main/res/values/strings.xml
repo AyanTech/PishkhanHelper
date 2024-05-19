@@ -51,4 +51,5 @@
     <string name="close" translatable="false">Close</string>
 
     <string name="helper_no_transaction_message">شما تاکنون تراکنشی نداشته‌اید</string>
+    <string name="helper_saved_to_clipboard">در حافظه کپی شد.</string>
 </resources>

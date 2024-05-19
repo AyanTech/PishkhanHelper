@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/margin_8"
+    android:paddingTop="@dimen/margin_8"
+    android:paddingEnd="@dimen/margin_8"
+    android:paddingBottom="@dimen/margin_8">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/keyTv"
+        style="@style/KeySmall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="start"
+        android:textAlignment="viewStart"
+        tools:text="کلید" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/valueTv"
+        style="@style/ValueSmall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="end"
+        android:textAlignment="viewEnd"
+        android:textStyle="bold"
+        tools:text="مقدار" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rowCopyIv"
+        android:layout_width="@dimen/margin_20"
+        android:layout_height="@dimen/margin_20"
+        android:layout_marginStart="@dimen/margin_8"
+        android:visibility="gone"
+        app:srcCompat="@drawable/helper_ic_copy"
+        tools:visibility="visible" />
+
+</LinearLayout>
