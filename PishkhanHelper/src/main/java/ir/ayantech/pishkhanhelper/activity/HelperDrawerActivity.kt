@@ -53,7 +53,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
     val appInfo: AppInfo
         get() = (applicationContext as HelperApplication).appInfo
 
-    private var waiterBottomSheet: HelperWaiterBottomSheet? = null
+    var waiterBottomSheet: HelperWaiterBottomSheet? = null
 
     abstract fun logoutPishkhan()
 
@@ -146,7 +146,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
     }
 
     private fun initWaiterBottomSheet() {
-        waiterBottomSheet = HelperWaiterBottomSheet(this) {
+        waiterBottomSheet = HelperWaiterBottomSheet(this, appInfo.appIcon) {
             corePishkhan24AyanApi.cancelCalls()
             servicesPishkhan24AyanApi.cancelCalls()
         }
@@ -212,6 +212,8 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
             navigationDrawer.syncState()
 
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+            appIconIv.setImageResource(appInfo.appIcon)
 
             phoneNumberTv.changeVisibility(show = getUserPhoneNumber().isNotEmpty())
             phoneNumberTv.text = getUserPhoneNumber()

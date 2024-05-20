@@ -3,6 +3,7 @@ package ir.ayantech.pishkhanhelper.fragment.login
 import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.DrawableRes
 import ir.ayantech.pishkhanhelper.R
 import ir.ayantech.pishkhanhelper.components.getInputComponentText
 import ir.ayantech.pishkhanhelper.components.initButtonFilled
@@ -25,6 +26,9 @@ abstract class EnterOtpCodeFragment : WhyGoogleFragment<FragmentEnterOtpCodeBind
     var otpMessage: String? = null
     var otpTimer: Long? = null
 
+    @get:DrawableRes
+    abstract val appIcon: Int
+
     abstract fun resendOtpCode()
     abstract fun login(otpCode: String)
 
@@ -36,6 +40,7 @@ abstract class EnterOtpCodeFragment : WhyGoogleFragment<FragmentEnterOtpCodeBind
 
     private fun initViews() {
         accessViews {
+            appLogoIv.setImageResource(appIcon)
             otpCodeInput.initOtpCodeInputComponent(
                 activity = requireActivity(),
                 doAfterFilled = { hasFilled ->

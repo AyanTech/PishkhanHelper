@@ -2,6 +2,7 @@ package ir.ayantech.pishkhanhelper.fragment.login
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.DrawableRes
 import ir.ayantech.pishkhanhelper.R
 import ir.ayantech.pishkhanhelper.components.getInputComponentText
 import ir.ayantech.pishkhanhelper.components.initButtonFilled
@@ -16,6 +17,9 @@ import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 abstract class EnterPhoneNumberFragment : WhyGoogleFragment<FragmentEnterPhoneNumberBinding>() {
 
     private var phoneNumber = ""
+
+    @get:DrawableRes
+    abstract val appIcon: Int
 
     abstract fun login()
 
@@ -38,6 +42,7 @@ abstract class EnterPhoneNumberFragment : WhyGoogleFragment<FragmentEnterPhoneNu
 
     private fun initViews() {
         accessViews {
+            appLogoIv.setImageResource(appIcon)
             phoneNumberInput.initPhoneNumberInputComponent(
                 activity = requireActivity(),
                 doAfterFilled = { hasFilled ->

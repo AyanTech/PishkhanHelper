@@ -16,7 +16,7 @@
         android:adjustViewBounds="true"
         android:paddingStart="@dimen/margin_64"
         android:paddingEnd="@dimen/margin_64"
-        app:srcCompat="@drawable/helper_vector_error" />
+        app:srcCompat="@drawable/helper_ic_error" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/messageTv"
