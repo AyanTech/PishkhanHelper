@@ -13,10 +13,10 @@
 
         <RelativeLayout
             android:id="@+id/toolbarRl"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
             android:layout_width="match_parent"
             android:layout_height="@dimen/margin_48"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:background="@color/helper_background_color">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -207,18 +207,77 @@
                     app:srcCompat="@drawable/helper_ic_share" />
             </RelativeLayout>
 
+            <RelativeLayout
+                android:id="@+id/privacyPolicyRl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_48"
+                android:layout_below="@id/shareAppRl"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:visibility="gone"
+                tools:visibility="visible">
 
-            <!--                <TextView-->
-            <!--                    android:id="@+id/privacyPolicyAppTv"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="@dimen/margin_48"-->
-            <!--                    android:layout_marginStart="@dimen/_8sdp"-->
-            <!--                    android:layout_marginTop="@dimen/_8sdp"-->
-            <!--                    android:drawablePadding="@dimen/_8sdp"-->
-            <!--                    android:gravity="center_vertical"-->
-            <!--                    android:text="@string/privacy_policy"-->
-            <!--                    android:textColor="@color/text_black"-->
-            <!--                     />-->
+                <TextView
+                    android:id="@+id/privacyPolicyTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_48"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_toEndOf="@id/privacyPolicyIv"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:gravity="center_vertical"
+                    android:text="@string/privacy_policy"
+                    android:textColor="@color/helper_text_black" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/privacyPolicyIv"
+                    android:layout_width="@dimen/margin_32"
+                    android:layout_height="@dimen/margin_32"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/helper_background_radius_8"
+                    android:padding="@dimen/margin_8"
+                    app:srcCompat="@drawable/ic_privacy_policy" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/termsAndConditionsRl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_48"
+                android:layout_below="@id/privacyPolicyRl"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/termsAndConditionsTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_48"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_toEndOf="@id/termsAndConditionsTv"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:gravity="center_vertical"
+                    android:text="@string/terms_and_conditions"
+                    android:textColor="@color/helper_text_black" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/termsAndConditionsIv"
+                    android:layout_width="@dimen/margin_32"
+                    android:layout_height="@dimen/margin_32"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/helper_background_radius_8"
+                    android:padding="@dimen/margin_8"
+                    app:srcCompat="@drawable/ic_terms_and_conditions" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/appLanguageRl"
@@ -258,10 +317,10 @@
                 android:id="@+id/loginLogoutRl"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin_48"
-                android:layout_marginBottom="@dimen/margin_12"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="@dimen/margin_16"
-                android:layout_marginEnd="@dimen/margin_16">
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_12">
 
                 <TextView
                     android:id="@+id/loginLogoutTv"

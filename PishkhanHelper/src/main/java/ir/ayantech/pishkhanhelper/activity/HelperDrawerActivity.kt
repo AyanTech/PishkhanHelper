@@ -120,6 +120,9 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
     abstract val handleDrawerLayoutLockOnTopFragmentChanged: (whyGoogleFragment: WhyGoogleFragment<*>) -> Boolean
     abstract val getUserPhoneNumber: () -> String
 
+    open val onPrivacyPolicyMenuItemClicked: SimpleCallBack? = null
+    open val onTermsAndConditionsMenuItemClicked: SimpleCallBack? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -239,6 +242,20 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
                         .setApplicationVersion(appInfo.applicationVersion)
                         .setApplicationType(appInfo.applicationType)
                     PishkhanHelper.shareApp(this@HelperDrawerActivity)
+                }
+            }
+
+            privacyPolicyRl.changeVisibility(show = onPrivacyPolicyMenuItemClicked.isNotNull())
+            privacyPolicyRl.setOnClickListener {
+                onMenuItemClicked {
+                    onPrivacyPolicyMenuItemClicked?.invoke()
+                }
+            }
+
+            termsAndConditionsRl.changeVisibility(show = onTermsAndConditionsMenuItemClicked.isNotNull())
+            termsAndConditionsRl.setOnClickListener {
+                onMenuItemClicked {
+                    onTermsAndConditionsMenuItemClicked?.invoke()
                 }
             }
 
