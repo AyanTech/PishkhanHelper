@@ -10,5 +10,7 @@ data class AppInfo(
     val flavor: String,
     val applicationId: String,
     val isDebugMode: Boolean,
-    @DrawableRes val appIcon: Int
+    @DrawableRes val appIcon: Int,
+    val coreApiBaseUrl: String? = null,
+    val servicesApiBaseUrl: String? = null
 )

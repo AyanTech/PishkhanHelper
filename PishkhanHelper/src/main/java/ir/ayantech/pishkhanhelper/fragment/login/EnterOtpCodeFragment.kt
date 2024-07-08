@@ -14,7 +14,9 @@ import ir.ayantech.pishkhanhelper.helper.changeEnable
 import ir.ayantech.pishkhanhelper.helper.getColorCompat
 import ir.ayantech.pishkhanhelper.helper.setSpanText
 import ir.ayantech.pishkhanhelper.helper.startTimer
+import ir.ayantech.pushsdk.core.AyanNotification
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
+import ir.ayantech.whygoogle.helper.SimpleCallBack
 
 abstract class EnterOtpCodeFragment : WhyGoogleFragment<FragmentEnterOtpCodeBinding>() {
 
@@ -30,7 +32,9 @@ abstract class EnterOtpCodeFragment : WhyGoogleFragment<FragmentEnterOtpCodeBind
     abstract val appIcon: Int
 
     abstract fun resendOtpCode()
+    @Deprecated(message = "Use function with two parameters: login(otpCode, reportPhoneNumber)")
     abstract fun login(otpCode: String)
+    abstract fun login(otpCode: String, reportPhoneNumber: SimpleCallBack)
 
     override fun onCreate() {
         super.onCreate()
@@ -75,8 +79,12 @@ abstract class EnterOtpCodeFragment : WhyGoogleFragment<FragmentEnterOtpCodeBind
         if (otpCode.isEmpty() || otpCode.length < 4) {
             binding.otpCodeInput.setInputComponentError(getString(R.string.enter_otp_code))
         } else {
-            login(otpCode = otpCode)
+            login(otpCode = otpCode, reportPhoneNumber = reportPhoneNumberForNotif)
         }
+    }
+
+    open val reportPhoneNumberForNotif: SimpleCallBack = {
+        phoneNumber?.let { AyanNotification.reportDeviceMobileNumber(it) }
     }
 
     private var timer: CountDownTimer? = null

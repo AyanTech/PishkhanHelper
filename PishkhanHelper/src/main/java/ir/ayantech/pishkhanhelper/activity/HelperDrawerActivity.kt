@@ -11,6 +11,7 @@ import ir.ayantech.ayannetworking.api.AyanApi
 import ir.ayantech.ayannetworking.api.AyanCommonCallStatus
 import ir.ayantech.ayannetworking.api.CallingState
 import ir.ayantech.ayannetworking.ayanModel.FailureType
+import ir.ayantech.pishkhanhelper.model.versionControl.AppExtraInfo
 import ir.ayantech.pishkhanhelper.PishkhanHelper
 import ir.ayantech.pishkhanhelper.R
 import ir.ayantech.pishkhanhelper.app.HelperApplication
@@ -25,6 +26,7 @@ import ir.ayantech.pishkhanhelper.model.AppInfo
 import ir.ayantech.pishkhanhelper.rate.showRatingIntent
 import ir.ayantech.pishkhanhelper.storage.SavedData
 import ir.ayantech.pishkhanhelper.fragment.login.EnterPhoneNumberFragment
+import ir.ayantech.pushsdk.core.AyanNotification
 import ir.ayantech.versioncontrol.VersionControlCore
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import ir.ayantech.whygoogle.helper.SimpleCallBack
@@ -119,6 +121,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
     abstract val handleToolbarRlVisibilityOnTopFragmentChanged: (whyGoogleFragment: WhyGoogleFragment<*>) -> Boolean
     abstract val handleDrawerLayoutLockOnTopFragmentChanged: (whyGoogleFragment: WhyGoogleFragment<*>) -> Boolean
     abstract val getUserPhoneNumber: () -> String
+    abstract val getUserToken: () -> String
 
     open val onPrivacyPolicyMenuItemClicked: SimpleCallBack? = null
     open val onTermsAndConditionsMenuItemClicked: SimpleCallBack? = null
@@ -136,6 +139,18 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
         initWaiterBottomSheet()
 
         handleIntent(intent)
+    }
+
+    private fun reportTokenForNotif() {
+        AyanNotification.reportExtraInfo(AppExtraInfo(getUserToken()))
+    }
+
+    private fun checkForNewVersion() {
+        VersionControlCore.getInstance()
+            .setApplicationName(appInfo.applicationName)
+            .setCategoryName(appInfo.flavor)
+            .setExtraInfo(AppExtraInfo(getUserToken()))
+            .checkForNewVersion(this)
     }
 
     private fun initViews() {
@@ -169,6 +184,8 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
         } else {
             initialize {
                 initViews()
+                checkForNewVersion()
+                reportTokenForNotif()
             }
         }
 
@@ -311,8 +328,8 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
 
     private fun onMenuItemClicked(callback: SimpleCallBack) {
         hideKeyboard()
-        callback()
         closeDrawer()
+        callback()
     }
 
     private fun closeDrawer() {

@@ -240,7 +240,7 @@
                     android:layout_centerVertical="true"
                     android:background="@drawable/helper_background_radius_8"
                     android:padding="@dimen/margin_8"
-                    app:srcCompat="@drawable/ic_privacy_policy" />
+                    app:srcCompat="@drawable/helper_ic_privacy_policy" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -276,14 +276,14 @@
                     android:layout_centerVertical="true"
                     android:background="@drawable/helper_background_radius_8"
                     android:padding="@dimen/margin_8"
-                    app:srcCompat="@drawable/ic_terms_and_conditions" />
+                    app:srcCompat="@drawable/helper_ic_terms_and_conditions" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/appLanguageRl"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin_48"
-                android:layout_below="@id/shareAppRl"
+                android:layout_below="@id/termsAndConditionsRl"
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="@dimen/margin_16"
                 android:layout_marginTop="@dimen/margin_8"
