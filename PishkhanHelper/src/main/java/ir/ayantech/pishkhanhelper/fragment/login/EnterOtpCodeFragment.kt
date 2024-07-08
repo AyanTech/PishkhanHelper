@@ -32,8 +32,7 @@ abstract class EnterOtpCodeFragment : WhyGoogleFragment<FragmentEnterOtpCodeBind
     abstract val appIcon: Int
 
     abstract fun resendOtpCode()
-    @Deprecated(message = "Use function with two parameters: login(otpCode, reportPhoneNumber)")
-    abstract fun login(otpCode: String)
+
     abstract fun login(otpCode: String, reportPhoneNumber: SimpleCallBack)
 
     override fun onCreate() {

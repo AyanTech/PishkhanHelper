@@ -26,6 +26,7 @@ import ir.ayantech.pishkhanhelper.model.AppInfo
 import ir.ayantech.pishkhanhelper.rate.showRatingIntent
 import ir.ayantech.pishkhanhelper.storage.SavedData
 import ir.ayantech.pishkhanhelper.fragment.login.EnterPhoneNumberFragment
+import ir.ayantech.pishkhanhelper.rate.showRatingBottomSheet
 import ir.ayantech.pushsdk.core.AyanNotification
 import ir.ayantech.versioncontrol.VersionControlCore
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
@@ -329,6 +330,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
     private fun onMenuItemClicked(callback: SimpleCallBack) {
         hideKeyboard()
         closeDrawer()
+        waiterBottomSheet?.dismiss()
         callback()
     }
 
@@ -360,6 +362,33 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
                 binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
             else
                 binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+        }
+    }
+
+    open val loadInterstitialAd: SimpleCallBack = {}
+    open var showInterstitialAdInResultPage: Boolean = true
+    open var showRatingBottomSheet = false
+    open var shouldAttach = false
+
+    override fun onBackPressed() {
+        if (binding.drawerLayout.isOpen) {
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            if (showInterstitialAdInResultPage) {
+                loadInterstitialAd()
+                pop()
+            } else {
+                if (showRatingBottomSheet) {
+                    showRatingBottomSheet(applicationId = appInfo.applicationId, marketName = appInfo.flavor)
+                    pop()
+                } else {
+                    if (shouldAttach) {
+                        pop()
+                    } else {
+                        super.onBackPressed()
+                    }
+                }
+            }
         }
     }
 }
