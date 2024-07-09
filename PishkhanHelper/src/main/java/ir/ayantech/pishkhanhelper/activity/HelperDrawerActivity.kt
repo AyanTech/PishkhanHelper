@@ -126,6 +126,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
 
     open val onPrivacyPolicyMenuItemClicked: SimpleCallBack? = null
     open val onTermsAndConditionsMenuItemClicked: SimpleCallBack? = null
+    open val onCallSupportMenuItemClicked: SimpleCallBack? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -277,6 +278,13 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
                 }
             }
 
+            callSupportRl.changeVisibility(show = onCallSupportMenuItemClicked.isNotNull())
+            callSupportRl.setOnClickListener {
+                onMenuItemClicked {
+                    onCallSupportMenuItemClicked?.invoke()
+                }
+            }
+
             appLanguageRl.changeVisibility(show = appInfo.flavor == "playstore")
             appLanguageRl.setOnClickListener {
                 onMenuItemClicked {
@@ -379,6 +387,8 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
                 pop()
             } else {
                 if (showRatingBottomSheet) {
+                    hideKeyboard()
+                    waiterBottomSheet?.dismiss()
                     showRatingBottomSheet(applicationId = appInfo.applicationId, marketName = appInfo.flavor)
                     pop()
                 } else {
