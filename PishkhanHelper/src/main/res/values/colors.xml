@@ -33,7 +33,7 @@
     <color name="helper_transparent">@android:color/transparent</color>
 
     <color name="helper_button_filled_background_solid_enable">@color/helper_color_primary</color>
-    <color name="helper_button_filled_background_solid_disable">@color/helper_gray7</color>
+    <color name="helper_button_filled_background_solid_disable">@color/helper_gray6</color>
 
     <color name="helper_button_textColor_enable">@color/white</color>
     <color name="helper_button_textColor_disable">@color/helper_gray5</color>
