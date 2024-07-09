@@ -10,7 +10,7 @@ import ir.ayantech.pushsdk.storage.PushUser
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import ir.ayantech.whygoogle.helper.BooleanCallBack
 
-abstract class NotificationsFragment<T : ViewBinding> : WhyGoogleFragment<T>() {
+abstract class HelperNotificationsFragment<T : ViewBinding> : WhyGoogleFragment<T>() {
 
     private val activityResultLauncher =
         registerForActivityResult(

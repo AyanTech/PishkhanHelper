@@ -10,7 +10,7 @@ import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import ir.ayantech.whygoogle.helper.fromJsonToObject
 import ir.ayantech.whygoogle.helper.verticalSetup
 
-open class TermsAndConditionsFragment : WhyGoogleFragment<FragmentTermsAndConditionsBinding>() {
+open class HelperTermsAndConditionsFragment : WhyGoogleFragment<FragmentTermsAndConditionsBinding>() {
 
     override fun onCreate() {
         super.onCreate()

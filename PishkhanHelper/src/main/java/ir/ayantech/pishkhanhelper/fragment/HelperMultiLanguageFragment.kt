@@ -9,7 +9,7 @@ import ir.ayantech.pishkhanhelper.storage.SavedData
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import java.util.*
 
-open class MultiLanguageFragment : WhyGoogleFragment<FragmentMultiLanguageBinding>() {
+open class HelperMultiLanguageFragment : WhyGoogleFragment<FragmentMultiLanguageBinding>() {
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentMultiLanguageBinding
         get() = FragmentMultiLanguageBinding::inflate
