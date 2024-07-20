@@ -78,9 +78,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/helper_background_top_left_radius_16"
-                android:backgroundTint="@color/helper_background_color"
-                android:paddingTop="@dimen/_24sdp"
-                android:paddingBottom="@dimen/_24sdp">
+                android:backgroundTint="@color/helper_background_color">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/appIconIv"
@@ -97,10 +95,10 @@
                     style="@style/Text3Regular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_8"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/appIconIv"

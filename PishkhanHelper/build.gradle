@@ -57,6 +57,7 @@ dependencies {
 
     //Version Control
     implementation 'com.github.ayantech:versioncontrol:0.6.2'
+    implementation 'com.coolerfall:android-http-download-manager:1.6.1'
 
     //Push Notification
     implementation 'com.github.shadowalker77:pushnotification:1.1.11'
@@ -94,7 +95,7 @@ afterEvaluate {
                 artifactId = 'pishkhanhelper'
 
                 // Version Library Name (Example : "1.0.0")
-                version = '0.3.10'
+                version = '0.3.11'
             }
         }
     }
