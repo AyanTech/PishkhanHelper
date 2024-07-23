@@ -127,6 +127,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
     open val onPrivacyPolicyMenuItemClicked: SimpleCallBack? = null
     open val onTermsAndConditionsMenuItemClicked: SimpleCallBack? = null
     open val onCallSupportMenuItemClicked: SimpleCallBack? = null
+    open val hasLoginOption: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -298,7 +299,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
             }
 
             val isUserLoggedIn = getUserPhoneNumber().isNotEmpty()
-            loginLogoutRl.makeVisible()
+            loginLogoutRl.changeVisibility(show = hasLoginOption)
             loginLogoutTv.text =
                 getString(if (isUserLoggedIn) R.string.logout else R.string.login_to_account)
             loginLogoutRl.setOnClickListener {
