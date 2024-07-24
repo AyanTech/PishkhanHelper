@@ -128,6 +128,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
     open val onTermsAndConditionsMenuItemClicked: SimpleCallBack? = null
     open val onCallSupportMenuItemClicked: SimpleCallBack? = null
     open val hasLoginOption: Boolean = true
+    open val hasRateOption: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -208,7 +209,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
         servicesPishkhan24AyanApi.commonCallStatus = ayanCommonCallingStatus
     }
 
-    private fun initToolbar() {
+    open fun initToolbar() {
         accessViews {
             backIv.setOnClickListener {
                 pop()
@@ -217,7 +218,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
         }
     }
 
-    private fun initNavigationDrawer() {
+    open fun initNavigationDrawer() {
         accessViews {
             menuIv.setOnClickListener {
                 hideKeyboard()
@@ -248,6 +249,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
                 }
             }
 
+            rateAppRl.changeVisibility(show = hasRateOption)
             rateAppRl.setOnClickListener {
                 onMenuItemClicked {
                     showRatingIntent(appInfo.applicationId, appInfo.flavor)
