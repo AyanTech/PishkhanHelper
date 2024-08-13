@@ -5,7 +5,6 @@ import androidx.multidex.MultiDex
 import ir.ayantech.ayannetworking.api.AyanApi
 import ir.ayantech.ayannetworking.api.GetUserToken
 import ir.ayantech.ayannetworking.ayanModel.LogLevel
-import ir.ayantech.pishkhanhelper.BuildConfig
 import ir.ayantech.pishkhanhelper.PishkhanHelper
 import ir.ayantech.pishkhanhelper.model.AppInfo
 import ir.ayantech.pishkhanhelper.storage.SavedData
@@ -19,7 +18,12 @@ abstract class HelperApplication : LocaleHelperApplication() {
     abstract fun initializePishkhanSDK()
     abstract val appInfo: AppInfo
     open fun initializePishkhanHelperSDK() {
-        PishkhanHelper.initialize(context = this, corePishkhan24Api = corePishkhan24AyanApi)
+        PishkhanHelper.initialize(
+            context = this,
+            corePishkhan24Api = corePishkhan24AyanApi,
+            versionControlApiBaseUrl = appInfo.versionControlApiBaseUrl,
+            pushNotificationApiBaseUrl = appInfo.pushNotificationApiBaseUrl
+        )
     }
 
     override fun onCreate() {

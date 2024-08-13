@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 PishkhanHelper.openDialWithSupportPhoneNumber(application)
             }
             share.setOnClickListener {
-                PishkhanHelper.shareApp(application)
+//                PishkhanHelper.shareApp(application)
             }
             rate.setOnClickListener {
                 showRatingIntent(applicationId = "ir.ayantech.topup", "cafebazaar")

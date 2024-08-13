@@ -150,11 +150,12 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
     }
 
     private fun checkForNewVersion() {
-        VersionControlCore.getInstance()
-            .setApplicationName(appInfo.applicationName)
-            .setCategoryName(appInfo.flavor)
-            .setExtraInfo(AppExtraInfo(getUserToken()))
-            .checkForNewVersion(this)
+        PishkhanHelper.checkForNewVersion(
+            activity = this,
+            applicationName = appInfo.applicationName,
+            flavor = appInfo.flavor,
+            userToken = getUserToken,
+        )
     }
 
     private fun initViews() {
@@ -258,12 +259,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
 
             shareAppRl.setOnClickListener {
                 onMenuItemClicked {
-                    VersionControlCore.getInstance()
-                        .setApplicationName(appInfo.applicationName)
-                        .setCategoryName(appInfo.applicationCategory)
-                        .setApplicationVersion(appInfo.applicationVersion)
-                        .setApplicationType(appInfo.applicationType)
-                    PishkhanHelper.shareApp(this@HelperDrawerActivity)
+                    PishkhanHelper.shareApp(appInfo, context = this@HelperDrawerActivity)
                 }
             }
 
