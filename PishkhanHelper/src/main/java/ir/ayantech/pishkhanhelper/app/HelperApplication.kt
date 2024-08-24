@@ -26,6 +26,9 @@ abstract class HelperApplication : LocaleHelperApplication() {
         )
     }
 
+    open val hasDefaultLanguage: Boolean
+        get() = appInfo.flavor == "cafebazaar" || appInfo.flavor == "myket"
+
     override fun onCreate() {
         super.onCreate()
 
@@ -54,9 +57,13 @@ abstract class HelperApplication : LocaleHelperApplication() {
         corePishkhan24AyanApi.headers = hashMapOf("Accept-Language" to if (SavedData.appLanguage.isNullOrEmpty()) "fa" else SavedData.appLanguage)
         servicesPishkhan24AyanApi.headers = hashMapOf("Accept-Language" to if (SavedData.appLanguage.isNullOrEmpty()) "fa" else SavedData.appLanguage)
 
-        if (appInfo.flavor != "playstore" && SavedData.appLanguage.isEmpty())
-            SavedData.appLanguage = "fa"
+        setDefaultLanguage()
 
+    }
+
+    open fun setDefaultLanguage() {
+        if (hasDefaultLanguage && SavedData.appLanguage.isEmpty())
+            SavedData.appLanguage = "fa"
     }
 
     override fun attachBaseContext(base: Context) {

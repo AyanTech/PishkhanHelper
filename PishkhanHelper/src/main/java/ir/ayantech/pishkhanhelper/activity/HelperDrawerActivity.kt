@@ -129,6 +129,8 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
     open val onCallSupportMenuItemClicked: SimpleCallBack? = null
     open val hasLoginOption: Boolean = true
     open val hasRateOption: Boolean = true
+    open val hasLanguageOption: Boolean
+        get() = appInfo.flavor == "playstore" || appInfo.flavor == "xiaomistore"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -284,7 +286,8 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
                 }
             }
 
-            appLanguageRl.changeVisibility(show = appInfo.flavor == "playstore")
+//            appLanguageRl.changeVisibility(show = appInfo.flavor == "playstore")
+            appLanguageRl.changeVisibility(show = hasLanguageOption)
             appLanguageRl.setOnClickListener {
                 onMenuItemClicked {
                     HelperChooseLanguageBottomSheet(
