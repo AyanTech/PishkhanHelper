@@ -49,6 +49,7 @@ open class HelperChooseLanguageBottomSheet(
         binding.confirmLanguageBtnComponent.initButtonFilled(
             btnText = getString(R.string.submit)
         ) {
+            dismiss()
             onLanguageSelected(selectedLanguage)
         }
     }
