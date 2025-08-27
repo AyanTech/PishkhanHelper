@@ -54,4 +54,5 @@
 
     <string name="helper_no_transaction_message">شما تاکنون تراکنشی نداشته‌اید</string>
     <string name="helper_saved_to_clipboard">در حافظه کپی شد.</string>
+    <string name="please_choose_app_language">لطفا زبان مورد نظر خود را انتخاب کنید.</string>
 </resources>

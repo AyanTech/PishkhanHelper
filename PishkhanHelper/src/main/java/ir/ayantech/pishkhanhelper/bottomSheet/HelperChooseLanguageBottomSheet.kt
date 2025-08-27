@@ -2,6 +2,7 @@ package ir.ayantech.pishkhanhelper.bottomSheet
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.widget.Toast
 import ir.ayantech.pishkhanhelper.R
 import ir.ayantech.pishkhanhelper.components.initButtonFilled
 import ir.ayantech.pishkhanhelper.databinding.BottomSheetChooseLanguageBinding
@@ -26,7 +27,7 @@ open class HelperChooseLanguageBottomSheet(
     override val hasCloseOption: Boolean
         get() = !isFirstTimeOpen
 
-    private var selectedLanguage = "fa"
+    private var selectedLanguage = SavedData.appLanguage
 
     override fun onCreate() {
         super.onCreate()
@@ -49,8 +50,12 @@ open class HelperChooseLanguageBottomSheet(
         binding.confirmLanguageBtnComponent.initButtonFilled(
             btnText = getString(R.string.submit)
         ) {
-            dismiss()
-            onLanguageSelected(selectedLanguage)
+            if (selectedLanguage.isEmpty()) {
+                Toast.makeText(context, getString(R.string.please_choose_app_language), Toast.LENGTH_SHORT).show()
+            } else {
+                dismiss()
+                onLanguageSelected(selectedLanguage)
+            }
         }
     }
 
@@ -62,7 +67,7 @@ open class HelperChooseLanguageBottomSheet(
             "fa"
         }
         else -> {
-            "fa"
+            ""
         }
     }
 }

@@ -183,7 +183,7 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
         recreate()
     }
 
-    private fun handleAppLanguage() {
+    open fun handleAppLanguage() {
         if (SavedData.appLanguage.isEmpty()) {
             HelperChooseLanguageBottomSheet(context = this, isFirstTimeOpen = true) { selectedLanguage ->
                 onNewLanguageSelected(selectedLanguage)
