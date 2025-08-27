@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'ir.ayantech.pishkhanhelper'
+    namespace 'ir.ayantech.pishkhanhelper.app'
     compileSdk 35
 
     defaultConfig {
-        applicationId "ir.ayantech.pishkhanhelper"
+        applicationId "ir.ayantech.pishkhanhelper.app"
         minSdk 21
         targetSdk 35
         versionCode 1
