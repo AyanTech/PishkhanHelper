@@ -1,4 +1,4 @@
-package ir.ayantech.pishkhanhelper
+package ir.ayantech.pishkhanhelper.app
 
 import android.os.Bundle
 import android.util.Log
@@ -6,8 +6,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ir.ayantech.ayannetworking.api.AyanApi
 import ir.ayantech.ayannetworking.ayanModel.LogLevel
+import ir.ayantech.pishkhanhelper.PishkhanHelper
+import ir.ayantech.pishkhanhelper.app.databinding.ActivityMainBinding
 import ir.ayantech.pishkhanhelper.components.initButtonFilled
-import ir.ayantech.pishkhanhelper.databinding.ActivityMainBinding
 import ir.ayantech.pishkhanhelper.rate.showRatingIntent
 
 class MainActivity : AppCompatActivity() {
