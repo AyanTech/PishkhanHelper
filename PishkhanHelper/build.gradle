@@ -7,11 +7,11 @@ plugins {
 
 android {
     namespace 'ir.ayantech.pishkhanhelper'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         minSdk 21
-        targetSdk 34
+        targetSdk 35
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -72,8 +72,8 @@ dependencies {
     implementation 'com.google.android.play:review:2.0.1'
 
     //Text Size
-    implementation 'com.intuit.sdp:sdp-android:1.1.0'
-    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+    implementation 'com.intuit.sdp:sdp-android:1.1.1'
+    implementation 'com.intuit.ssp:ssp-android:1.1.1'
 }
 
 afterEvaluate {
@@ -95,7 +95,7 @@ afterEvaluate {
                 artifactId = 'pishkhanhelper'
 
                 // Version Library Name (Example : "1.0.0")
-                version = '0.3.16'
+                version = '0.3.17'
             }
         }
     }
