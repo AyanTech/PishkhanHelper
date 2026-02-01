@@ -44,7 +44,7 @@ abstract class HelperApplication : LocaleHelperApplication() {
         servicesPishkhan24AyanApi = AyanApi(
             context = this,
             getUserToken = this.getUserToken,
-            defaultBaseUrl = appInfo.servicesApiBaseUrl ?: "https://services.pishkhan24.ayantech.ir/webservices/services.svc/",
+            defaultBaseUrl = appInfo.servicesApiBaseUrl ?: "https://core.pishkhan24.ayantech.ir/webservices/services.svc/",
             timeout = 120,
             headers = hashMapOf("Accept-Language" to "fa"),
             logLevel = if (appInfo.isDebugMode) LogLevel.LOG_ALL else LogLevel.DO_NOT_LOG
