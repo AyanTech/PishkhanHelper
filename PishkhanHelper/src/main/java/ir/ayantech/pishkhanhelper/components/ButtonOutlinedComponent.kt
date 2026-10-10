@@ -7,7 +7,6 @@ import android.graphics.drawable.StateListDrawable
 import android.util.StateSet
 import android.view.View
 import androidx.core.content.ContextCompat.getColor
-import androidx.viewbinding.ViewBinding
 import ir.ayantech.pishkhanhelper.R
 import ir.ayantech.pishkhanhelper.databinding.ComponentButtonOutlinedBinding
 import ir.ayantech.pishkhanhelper.helper.getDimension
@@ -60,16 +59,6 @@ fun ComponentButtonOutlinedBinding.initButtonOutlined(
         outlinedButton.isSelected = true
     }
 }
-
-//fun ViewBinding.changeEnable(
-//    enable: Boolean
-//) {
-//    outlinedButton.isEnabled = enable
-//}
-
-//fun ViewBinding.changeVisibility(isVisible: Boolean) {
-//    outlinedButton.changeVisibility(show = isVisible)
-//}
 
 fun View.setButtonOutlinedText(text: String) {
     ComponentButtonOutlinedBinding.bind(this).setButtonOutlinedText(text)

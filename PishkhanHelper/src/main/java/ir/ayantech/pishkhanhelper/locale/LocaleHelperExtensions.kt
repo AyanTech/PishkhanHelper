@@ -17,10 +17,5 @@ val Configuration.currentLocale: Locale
     }
 
 fun Configuration.setCurrentLocale(locale: Locale) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-        this.setLocale(locale)
-    } else {
-        @Suppress("DEPRECATION")
-        this.locale = locale
-    }
+    this.setLocale(locale)
 }

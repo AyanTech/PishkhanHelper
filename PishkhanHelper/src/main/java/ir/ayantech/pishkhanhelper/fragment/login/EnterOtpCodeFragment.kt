@@ -54,7 +54,8 @@ abstract class EnterOtpCodeFragment : WhyGoogleFragment<FragmentEnterOtpCodeBind
                 maxLength = otpLength,
                 onEditorActionListener = { checkOtpCode() }
             )
-            enterOtpCodeDescriptionTv.text = otpMessage ?: getString(R.string.otp_sent_to_phone_number, phoneNumber)
+            enterOtpCodeDescriptionTv.text =
+                otpMessage ?: getString(R.string.otp_sent_to_phone_number, phoneNumber)
             confirmOtpCodeBtn.changeEnable(isEnable = false)
             confirmOtpCodeBtn.initButtonFilled(
                 btnText = getString(R.string.confirm),
@@ -120,9 +121,4 @@ abstract class EnterOtpCodeFragment : WhyGoogleFragment<FragmentEnterOtpCodeBind
                 }
             })
     }
-
-//    override fun onBackPressed(): Boolean {
-//        unregisterReceiver()
-//        return super.onBackPressed()
-//    }
 }

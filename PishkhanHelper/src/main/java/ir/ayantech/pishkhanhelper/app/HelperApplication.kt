@@ -1,18 +1,21 @@
 package ir.ayantech.pishkhanhelper.app
 
-import android.content.Context
-import androidx.multidex.MultiDex
 import ir.ayantech.ayannetworking.api.AyanApi
 import ir.ayantech.ayannetworking.api.GetUserToken
 import ir.ayantech.ayannetworking.ayanModel.LogLevel
 import ir.ayantech.pishkhanhelper.PishkhanHelper
 import ir.ayantech.pishkhanhelper.model.AppInfo
 import ir.ayantech.pishkhanhelper.storage.SavedData
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 
 abstract class HelperApplication : LocaleHelperApplication() {
 
     lateinit var corePishkhan24AyanApi: AyanApi
     lateinit var servicesPishkhan24AyanApi: AyanApi
+    private val sdkCoroutineScope =
+        CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     abstract val getUserToken: GetUserToken
     abstract fun initializePishkhanSDK()
@@ -20,6 +23,7 @@ abstract class HelperApplication : LocaleHelperApplication() {
     open fun initializePishkhanHelperSDK() {
         PishkhanHelper.initialize(
             context = this,
+            coroutineScope = sdkCoroutineScope,
             corePishkhan24Api = corePishkhan24AyanApi,
             versionControlApiBaseUrl = appInfo.versionControlApiBaseUrl,
             pushNotificationApiBaseUrl = appInfo.pushNotificationApiBaseUrl
@@ -35,7 +39,8 @@ abstract class HelperApplication : LocaleHelperApplication() {
         corePishkhan24AyanApi = AyanApi(
             context = this,
             getUserToken = this.getUserToken,
-            defaultBaseUrl = appInfo.coreApiBaseUrl ?: "https://core.pishkhan24.ayantech.ir/webservices/Core.svc/",
+            defaultBaseUrl = appInfo.coreApiBaseUrl
+                ?: "https://core.pishkhan24.ayantech.ir/webservices/Core.svc/",
             timeout = 120,
             headers = hashMapOf("Accept-Language" to "fa"),
             logLevel = if (appInfo.isDebugMode) LogLevel.LOG_ALL else LogLevel.DO_NOT_LOG
@@ -44,7 +49,8 @@ abstract class HelperApplication : LocaleHelperApplication() {
         servicesPishkhan24AyanApi = AyanApi(
             context = this,
             getUserToken = this.getUserToken,
-            defaultBaseUrl = appInfo.servicesApiBaseUrl ?: "https://core.pishkhan24.ayantech.ir/webservices/services.svc/",
+            defaultBaseUrl = appInfo.servicesApiBaseUrl
+                ?: "https://core.pishkhan24.ayantech.ir/webservices/services.svc/",
             timeout = 120,
             headers = hashMapOf("Accept-Language" to "fa"),
             logLevel = if (appInfo.isDebugMode) LogLevel.LOG_ALL else LogLevel.DO_NOT_LOG
@@ -54,8 +60,10 @@ abstract class HelperApplication : LocaleHelperApplication() {
 
         initializePishkhanHelperSDK()
 
-        corePishkhan24AyanApi.headers = hashMapOf("Accept-Language" to if (SavedData.appLanguage.isNullOrEmpty()) "fa" else SavedData.appLanguage)
-        servicesPishkhan24AyanApi.headers = hashMapOf("Accept-Language" to if (SavedData.appLanguage.isNullOrEmpty()) "fa" else SavedData.appLanguage)
+        corePishkhan24AyanApi.headers =
+            hashMapOf("Accept-Language" to SavedData.appLanguage.ifEmpty { "fa" })
+        servicesPishkhan24AyanApi.headers =
+            hashMapOf("Accept-Language" to SavedData.appLanguage.ifEmpty { "fa" })
 
         setDefaultLanguage()
 
@@ -64,10 +72,5 @@ abstract class HelperApplication : LocaleHelperApplication() {
     open fun setDefaultLanguage() {
         if (hasDefaultLanguage && SavedData.appLanguage.isEmpty())
             SavedData.appLanguage = "fa"
-    }
-
-    override fun attachBaseContext(base: Context) {
-        super.attachBaseContext(base)
-        MultiDex.install(this)
     }
 }

@@ -58,7 +58,6 @@ object BillRecognizer {
     private fun recognitionQBillPay(result: String): Boolean {
         var count = 2
         var sum = 0
-        val R: Int
         var controlNo = 0
 
         val newBillId = IntArray(result.length)
@@ -79,7 +78,7 @@ object BillRecognizer {
         for (i in sumNo.indices) {
             sum += sumNo[i]
         }
-        R = sum % 11
+        val R: Int = sum % 11
         controlNo = if (R == 0 || R == 1) 0 else 11 - R
         return controlNo == newBillId[newBillId.size - 2]
     }

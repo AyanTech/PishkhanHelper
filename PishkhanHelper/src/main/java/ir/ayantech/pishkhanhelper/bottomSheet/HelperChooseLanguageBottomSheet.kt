@@ -13,7 +13,7 @@ open class HelperChooseLanguageBottomSheet(
     context: Context,
     private val isFirstTimeOpen: Boolean,
     private val onLanguageSelected: StringCallBack
-): HelperBaseBottomSheet<BottomSheetChooseLanguageBinding>(context) {
+) : HelperBaseBottomSheet<BottomSheetChooseLanguageBinding>(context) {
 
     override val title: String
         get() = getString(R.string.choose_language)
@@ -34,11 +34,8 @@ open class HelperChooseLanguageBottomSheet(
 
         binding.languageContainer.check(
             when (SavedData.appLanguage) {
-
                 "en" -> binding.englishLang.id
-
                 "fa" -> binding.persianLang.id
-
                 else -> -1
             }
         )
@@ -51,7 +48,11 @@ open class HelperChooseLanguageBottomSheet(
             btnText = getString(R.string.submit)
         ) {
             if (selectedLanguage.isEmpty()) {
-                Toast.makeText(context, getString(R.string.please_choose_app_language), Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    context,
+                    getString(R.string.please_choose_app_language),
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 dismiss()
                 onLanguageSelected(selectedLanguage)
@@ -60,14 +61,8 @@ open class HelperChooseLanguageBottomSheet(
     }
 
     private fun getAppLangCodeFromSelectedId(id: Int): String = when (id) {
-        binding.englishLang.id -> {
-            "en"
-        }
-        binding.persianLang.id -> {
-            "fa"
-        }
-        else -> {
-            ""
-        }
+        binding.englishLang.id -> "en"
+        binding.persianLang.id -> "fa"
+        else -> ""
     }
 }

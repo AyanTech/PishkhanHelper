@@ -7,7 +7,7 @@ import ir.ayantech.pishkhanhelper.databinding.FragmentMultiLanguageBinding
 import ir.ayantech.pishkhanhelper.locale.Locales
 import ir.ayantech.pishkhanhelper.storage.SavedData
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
-import java.util.*
+import java.util.Locale
 
 open class HelperMultiLanguageFragment : WhyGoogleFragment<FragmentMultiLanguageBinding>() {
 
@@ -32,15 +32,9 @@ open class HelperMultiLanguageFragment : WhyGoogleFragment<FragmentMultiLanguage
     }
 
     private fun getAppLangCodeFromSelectedId(id: Int): String = when (id) {
-        binding.englishLang.id -> {
-            Locales.English.language
-        }
-        binding.persianLang.id -> {
-            Locales.Persian.language
-        }
-        else -> {
-            Locales.Persian.language
-        }
+        binding.englishLang.id -> Locales.English.language
+        binding.persianLang.id -> Locales.Persian.language
+        else -> Locales.Persian.language
     }
 
     private fun changeAppLanguage(languageCode: String) {

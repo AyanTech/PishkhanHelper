@@ -3,6 +3,7 @@ package ir.ayantech.pishkhanhelper.utils
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import androidx.core.net.toUri
 
 fun openDial(context: Context?, phoneNumber: String) {
     if (context == null) return
@@ -12,6 +13,6 @@ fun openDial(context: Context?, phoneNumber: String) {
         finalNumber += Uri.encode("#")
     }
     val intent = Intent(Intent.ACTION_DIAL)
-    intent.data = Uri.parse("tel:$finalNumber")
+    intent.data = "tel:$finalNumber".toUri()
     context.startActivity(intent)
 }
