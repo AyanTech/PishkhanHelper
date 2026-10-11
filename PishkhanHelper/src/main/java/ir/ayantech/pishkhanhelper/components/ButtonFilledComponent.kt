@@ -2,7 +2,6 @@ package ir.ayantech.pishkhanhelper.components
 
 import android.os.SystemClock
 import android.view.View
-import androidx.viewbinding.ViewBinding
 import ir.ayantech.pishkhanhelper.databinding.ComponentButtonFilledBinding
 import ir.ayantech.pishkhanhelper.helper.changeEnable
 
@@ -45,14 +44,6 @@ fun View.performButtonFilledClick() {
 fun ComponentButtonFilledBinding.performButtonFilledClick() {
     filledButton.performClick()
 }
-
-//fun ViewBinding.changeEnable(
-//    enable: Boolean
-//) {
-//    (this as? ComponentButtonFilledBinding)?.let {
-//        filledButton.isEnabled = enable
-//    }
-//}
 
 fun View.setFilledButtonText(text: String?) {
     ComponentButtonFilledBinding.bind(this).setFilledButtonText(text)

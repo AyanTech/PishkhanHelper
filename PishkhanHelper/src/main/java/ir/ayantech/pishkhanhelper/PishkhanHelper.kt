@@ -14,25 +14,37 @@ import ir.ayantech.pishkhanhelper.rate.MarketName
 import ir.ayantech.pishkhanhelper.storage.SavedData
 import ir.ayantech.pishkhanhelper.utils.openDial
 import ir.ayantech.pushsdk.core.AyanNotification
-import ir.ayantech.pushsdk.networking.PushNotificationNetworking
-import ir.ayantech.versioncontrol.VersionControlClient
 import ir.ayantech.versioncontrol.VersionControlCore
-import ir.ayantech.versioncontrol.api.VersionControlAPI
+import kotlinx.coroutines.CoroutineScope
 
 object PishkhanHelper {
 
     private var corePishkhan24Api: AyanApi? = null
     private var versionControlApiBaseUrl: String? = null
+    private var versionControlCore: VersionControlCore? = null
 
-    fun initialize(context: Context, corePishkhan24Api: AyanApi, versionControlApiBaseUrl: String? = null, pushNotificationApiBaseUrl: String? = null) {
+    fun initialize(
+        context: Context,
+        corePishkhan24Api: AyanApi,
+        coroutineScope: CoroutineScope,
+        versionControlApiBaseUrl: String? = null,
+        pushNotificationApiBaseUrl: String? = null
+    ) {
         SavedData.initialize(context)
         this.corePishkhan24Api = corePishkhan24Api
         this.versionControlApiBaseUrl = versionControlApiBaseUrl
         AyanNotification.initialize(context, pushNotificationApiBaseUrl)
+
+        versionControlCore = VersionControlCore.getInstance(
+            baseUrl = versionControlApiBaseUrl.orEmpty(),
+            coroutineScope = coroutineScope
+        )
     }
 
     fun shareApp(appInfo: AppInfo, context: Context) {
-        VersionControlCore.getInstance(versionControlApiBaseUrl)
+        val core = versionControlCore ?: return
+
+        core
             .setApplicationName(appInfo.applicationName)
             .setCategoryName(appInfo.applicationCategory)
             .setApplicationVersion(appInfo.applicationVersion)
@@ -46,14 +58,19 @@ object PishkhanHelper {
         @MarketName flavor: String,
         userToken: GetUserToken
     ) {
-        VersionControlCore.getInstance(versionControlApiBaseUrl)
+        val core = versionControlCore ?: return
+
+        core
             .setApplicationName(applicationName)
             .setCategoryName(flavor)
             .setExtraInfo(AppExtraInfo(userToken()))
             .checkForNewVersion(activity)
     }
 
-    fun getConfigBusinessInfo(onGetResult: (ConfigBusinessInfo.Output) -> Unit, onFailure: OnFailure? = null) {
+    fun getConfigBusinessInfo(
+        onGetResult: (ConfigBusinessInfo.Output) -> Unit,
+        onFailure: OnFailure? = null
+    ) {
         corePishkhan24Api?.ayanCall<ConfigBusinessInfo.Output>(
             endPoint = "v1/ConfigBusinessInfo",
             ayanCallStatus = AyanCallStatus {
@@ -71,7 +88,10 @@ object PishkhanHelper {
                     }
                 }
                 failure {
-                    Log.d("phelper", "getConfigBusinessInfo: code = ${it.failureCode} \nmessage = ${it.failureMessage}")
+                    Log.d(
+                        "phelper",
+                        "getConfigBusinessInfo: code = ${it.failureCode} \nmessage = ${it.failureMessage}"
+                    )
                     onFailure?.invoke(it)
                 }
             }

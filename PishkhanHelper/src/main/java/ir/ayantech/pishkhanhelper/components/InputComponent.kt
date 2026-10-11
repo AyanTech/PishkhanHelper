@@ -6,14 +6,10 @@ import android.content.Context
 import android.os.Build
 import android.text.InputType
 import android.view.View
-import android.view.View.OnTouchListener
 import android.view.inputmethod.EditorInfo
 import androidx.annotation.ColorRes
-import androidx.annotation.DimenRes
-import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.view.updatePadding
-import androidx.viewbinding.ViewBinding
 import ir.ayantech.pishkhanhelper.R
 import ir.ayantech.pishkhanhelper.databinding.ComponentInputBinding
 import ir.ayantech.pishkhanhelper.helper.AfterTextChangedCallback
@@ -56,16 +52,6 @@ fun ComponentInputBinding.initInputComponent(
     helperText: String? = null,
     maxLength: Int? = null,
     textAlignment: Int? = null,
-//    @DrawableRes startDrawable: Int? = null,
-//    @DrawableRes endDrawable: Int? = null,
-//    @ColorRes startIconColor: Int? = null,
-//    @ColorRes endIconColor: Int? = null,
-//    onStartIconClicked: SimpleCallBack? = null,
-//    onEndIconClicked: SimpleCallBack? = null,
-//    onStartIconTouchListener: OnTouchListener? = null,
-//    onEndIconTouchListener: OnTouchListener? = null,
-//    @DimenRes startIconPadding: Int? = null,
-//    @DimenRes endIconPadding: Int? = null,
 ) {
     backgroundTint?.let {
         textInputLayout.boxBackgroundColor = getColor(context, backgroundTint)
@@ -86,18 +72,18 @@ fun ComponentInputBinding.initInputComponent(
             setTextAlignment(textAlignment)
             if (textAlignment == View.TEXT_ALIGNMENT_VIEW_START)
                 textInputEditText.updatePadding(
-                    0,
-                    0,
-                    context.getDimensionInt(R.dimen.margin_40),
-                    0
+                    left = 0,
+                    top = 0,
+                    right = context.getDimensionInt(R.dimen.margin_40),
+                    bottom = 0
                 )
 
             if (textAlignment == View.TEXT_ALIGNMENT_VIEW_END)
                 textInputEditText.updatePadding(
-                    0,
-                    0,
-                    context.getDimensionInt(R.dimen.margin_40),
-                    0
+                    left = 0,
+                    top = 0,
+                    right = context.getDimensionInt(R.dimen.margin_40),
+                    bottom = 0
                 )
         }
     }
@@ -134,7 +120,7 @@ fun ComponentInputBinding.initPhoneNumberInputComponent(
         doAfterFilled?.invoke(it.length == 11)
     }
     textInputEditText.imeOptions = EditorInfo.IME_ACTION_SEND
-    textInputEditText.setOnEditorActionListener { v, actionId, event ->
+    textInputEditText.setOnEditorActionListener { _, actionId, _ ->
         if (actionId == EditorInfo.IME_ACTION_SEND) {
             onEditorActionListener?.invoke()
         }
@@ -182,7 +168,7 @@ fun ComponentInputBinding.initOtpCodeInputComponent(
 
 fun View.getInputComponentText() = ComponentInputBinding.bind(this).getInputComponentText()
 
-fun ComponentInputBinding.getInputComponentText() = textInputEditText.text?.toString() ?: ""
+fun ComponentInputBinding.getInputComponentText() = textInputEditText.text?.toString().orEmpty()
 
 fun View.setInputComponentText(text: String?) {
     ComponentInputBinding.bind(this).setInputComponentText(text)
@@ -199,10 +185,6 @@ fun View.placeInputComponentCursorToEnd() {
 fun ComponentInputBinding.placeInputComponentCursorToEnd() {
     textInputEditText.placeCursorToEnd()
 }
-
-//fun ComponentInputBinding.changeVisibility(show: Boolean) {
-//    root.changeVisibility(show = show)
-//}
 
 fun View.setInputComponentAfterTextChangesListener(afterTextChangedCallback: AfterTextChangedCallback) {
     ComponentInputBinding.bind(this)
