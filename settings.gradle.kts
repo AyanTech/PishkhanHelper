@@ -1,6 +1,6 @@
 pluginManagement {
     repositories {
-//        maven { url 'https://maven.myket.ir' }
+        maven { url = uri("https://maven.myket.ir") }
         google()
         mavenCentral()
         gradlePluginPortal()
@@ -9,14 +9,14 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-//        maven { url 'https://maven.myket.ir' }
+        maven { url = uri("https://maven.myket.ir") }
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
+        maven { url = uri("https://jitpack.io") }
 
     }
 }
 
 rootProject.name = "PishkhanHelper"
-include ':app'
-include ':PishkhanHelper'
+include(":app")
+include(":PishkhanHelper")

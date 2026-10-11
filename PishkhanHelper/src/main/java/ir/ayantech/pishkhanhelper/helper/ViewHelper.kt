@@ -100,12 +100,6 @@ fun View.changeWidthAndHeightWithAnimate(width: Int, height: Int, duration: Long
     changeHeightWithAnimate(height, duration)
 }
 
-//fun View.addRule(verb: Int, subject: Int) {
-//    updateLayoutParams<RelativeLayout.LayoutParams> {
-//        this.addRule(RelativeLayout.BELOW, R.id.ghabzinoLogoIv)
-//    }
-//}
-
 fun View.setWeight(weight: Float) {
     trying {
         updateLayoutParams<LinearLayout.LayoutParams> {

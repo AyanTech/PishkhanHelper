@@ -17,7 +17,8 @@ import ir.ayantech.whygoogle.helper.changeVisibility
 import ir.ayantech.whygoogle.helper.isNotNull
 import ir.ayantech.whygoogle.helper.viewBinding
 
-abstract class HelperBaseBottomSheet<T : ViewBinding>(context: Context) : BottomSheetDialog(context) {
+abstract class HelperBaseBottomSheet<T : ViewBinding>(context: Context) :
+    BottomSheetDialog(context) {
 
     val binding: T by viewBinding(binder)
 
@@ -67,8 +68,9 @@ abstract class HelperBaseBottomSheet<T : ViewBinding>(context: Context) : Bottom
         parentBinding?.root?.let { setContentView(it) }
         window?.setLayout(MATCH_PARENT, MATCH_PARENT)
         if (isFullScreen()) {
-            this.findViewById<FrameLayout>(                                        R.id.design_bottom_sheet)?.let {
-                BottomSheetBehavior.from<FrameLayout?>(it).state = BottomSheetBehavior.STATE_EXPANDED
+            this.findViewById<FrameLayout>(R.id.design_bottom_sheet)?.let {
+                BottomSheetBehavior.from<FrameLayout?>(it).state =
+                    BottomSheetBehavior.STATE_EXPANDED
                 BottomSheetBehavior.from<FrameLayout?>(it).isDraggable = isDraggable
             }
         }

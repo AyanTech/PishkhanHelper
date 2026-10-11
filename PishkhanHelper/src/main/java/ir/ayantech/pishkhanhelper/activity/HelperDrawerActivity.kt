@@ -11,7 +11,6 @@ import ir.ayantech.ayannetworking.api.AyanApi
 import ir.ayantech.ayannetworking.api.AyanCommonCallStatus
 import ir.ayantech.ayannetworking.api.CallingState
 import ir.ayantech.ayannetworking.ayanModel.FailureType
-import ir.ayantech.pishkhanhelper.model.versionControl.AppExtraInfo
 import ir.ayantech.pishkhanhelper.PishkhanHelper
 import ir.ayantech.pishkhanhelper.R
 import ir.ayantech.pishkhanhelper.app.HelperApplication
@@ -20,22 +19,21 @@ import ir.ayantech.pishkhanhelper.bottomSheet.HelperConfirmationBottomSheet
 import ir.ayantech.pishkhanhelper.bottomSheet.HelperErrorBottomSheet
 import ir.ayantech.pishkhanhelper.bottomSheet.HelperWaiterBottomSheet
 import ir.ayantech.pishkhanhelper.databinding.HelperDrawerActivityBinding
+import ir.ayantech.pishkhanhelper.fragment.login.EnterPhoneNumberFragment
 import ir.ayantech.pishkhanhelper.helper.hideKeyboard
 import ir.ayantech.pishkhanhelper.locale.currentLocale
 import ir.ayantech.pishkhanhelper.model.AppInfo
+import ir.ayantech.pishkhanhelper.model.versionControl.AppExtraInfo
+import ir.ayantech.pishkhanhelper.rate.showRatingBottomSheet
 import ir.ayantech.pishkhanhelper.rate.showRatingIntent
 import ir.ayantech.pishkhanhelper.storage.SavedData
-import ir.ayantech.pishkhanhelper.fragment.login.EnterPhoneNumberFragment
-import ir.ayantech.pishkhanhelper.rate.showRatingBottomSheet
 import ir.ayantech.pushsdk.core.AyanNotification
-import ir.ayantech.versioncontrol.VersionControlCore
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import ir.ayantech.whygoogle.helper.SimpleCallBack
 import ir.ayantech.whygoogle.helper.changeVisibility
 import ir.ayantech.whygoogle.helper.delayed
 import ir.ayantech.whygoogle.helper.isNotNull
 import ir.ayantech.whygoogle.helper.isVisible
-import ir.ayantech.whygoogle.helper.makeVisible
 import ir.ayantech.whygoogle.helper.trying
 import java.util.Locale
 
@@ -286,7 +284,6 @@ abstract class HelperDrawerActivity : LocaleHelperActivity<HelperDrawerActivityB
                 }
             }
 
-//            appLanguageRl.changeVisibility(show = appInfo.flavor == "playstore")
             appLanguageRl.changeVisibility(show = hasLanguageOption)
             appLanguageRl.setOnClickListener {
                 onMenuItemClicked {

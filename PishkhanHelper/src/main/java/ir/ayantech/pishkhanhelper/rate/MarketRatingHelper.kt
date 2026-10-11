@@ -10,6 +10,7 @@ import android.net.Uri
 import android.util.Log
 import androidx.annotation.StringDef
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import com.google.android.gms.tasks.Task
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
@@ -24,20 +25,27 @@ import ir.ayantech.whygoogle.helper.trying
 @Retention(AnnotationRetention.SOURCE)
 annotation class MarketName
 
-fun AppCompatActivity.showRatingIntent(applicationId: String, @MarketName marketName: String, onFailed: (() -> Unit)? = null) {
-    when(marketName.lowercase()) {
+fun AppCompatActivity.showRatingIntent(
+    applicationId: String,
+    @MarketName marketName: String,
+    onFailed: (() -> Unit)? = null
+) {
+    when (marketName.lowercase()) {
         "cafebazaar" -> showCafeBazaarIntent(applicationId) { onFailed?.invoke() }
         "myket" -> showMyketIntent(applicationId) { onFailed?.invoke() }
         "galaxystore" -> showGalaxyStoreIntent(applicationId) { onFailed?.invoke() }
         "playstore" -> showPlayStoreIntent(applicationId) { onFailed?.invoke() }
-//        "xiaomistore"
         else -> {
             onFailed?.invoke()
         }
     }
 }
 
-fun AppCompatActivity.showRatingBottomSheet(applicationId: String, marketName: String, callback: BooleanCallBack? = null) {
+fun AppCompatActivity.showRatingBottomSheet(
+    applicationId: String,
+    marketName: String,
+    callback: BooleanCallBack? = null
+) {
     if (!SavedData.userHasRated) {
         trying {
             HelperMarketRatingBottomSheet(
@@ -58,7 +66,7 @@ fun AppCompatActivity.showCafeBazaarIntent(
 ) {
     try {
         val intent = Intent(Intent.ACTION_EDIT)
-        intent.data = Uri.parse("bazaar://details?id=$applicationId")
+        intent.data = "bazaar://details?id=$applicationId".toUri()
         intent.setPackage("com.farsitel.bazaar")
         startActivity(intent)
     } catch (e: Exception) {
@@ -75,7 +83,7 @@ fun AppCompatActivity.showMyketIntent(
         val url = "myket://comment?id=$applicationId"
         val intent = Intent()
         intent.action = Intent.ACTION_VIEW
-        intent.data = Uri.parse(url)
+        intent.data = url.toUri()
         startActivity(intent)
     } catch (e: Exception) {
         Log.e("MarketIntent", "startMarketIntent: Myket => ${e.printStackTrace()}")
@@ -97,15 +105,16 @@ fun AppCompatActivity.showGalaxyStoreIntent(
         if (inappReviewVersion > 0) {
             val intent = Intent("com.sec.android.app.samsungapps.REQUEST_INAPP_REVIEW_AUTHORITY")
             intent.setPackage("com.sec.android.app.samsungapps")
-            intent.putExtra("callerPackage", applicationId ?: packageName) // applicationId : package name
+            intent.putExtra(
+                "callerPackage",
+                applicationId ?: packageName
+            ) // applicationId : package name
 
             sendBroadcast(intent)
             val filter = IntentFilter()
             filter.addAction("com.sec.android.app.samsungapps.RESPONSE_INAPP_REVIEW_AUTHORITY")
             object : BroadcastReceiver() {
                 override fun onReceive(context: Context?, intent: Intent?) {
-//                    val hasAuthority = intent?.getBooleanExtra("hasAuthority", false)
-
                     val deeplinkUri = intent?.getStringExtra("deeplinkUri")
                     val newIntent = Intent()
                     newIntent.data = Uri.parse(deeplinkUri)
@@ -151,7 +160,11 @@ private fun rateGooglePlay(mainActivity: AppCompatActivity) {
     }
 }
 
-private fun google(mainActivity: AppCompatActivity, task: Task<ReviewInfo>, manager: ReviewManager) {
+private fun google(
+    mainActivity: AppCompatActivity,
+    task: Task<ReviewInfo>,
+    manager: ReviewManager
+) {
     if (task.isSuccessful) {
         // We got the ReviewInfo object
         val reviewInfo = task.result
@@ -159,6 +172,8 @@ private fun google(mainActivity: AppCompatActivity, task: Task<ReviewInfo>, mana
         flow.addOnCompleteListener { _ ->
         }
     } else {
-        "https://play.google.com/store/apps/details?id=${mainActivity.packageName}".openUrl(mainActivity)
+        "https://play.google.com/store/apps/details?id=${mainActivity.packageName}".openUrl(
+            mainActivity
+        )
     }
 }

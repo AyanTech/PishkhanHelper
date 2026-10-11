@@ -36,7 +36,6 @@ abstract class EnterPhoneNumberFragment : WhyGoogleFragment<FragmentEnterPhoneNu
 
     override fun onCreate() {
         super.onCreate()
-
         initViews()
     }
 

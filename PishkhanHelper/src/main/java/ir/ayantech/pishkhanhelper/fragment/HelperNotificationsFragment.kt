@@ -24,7 +24,7 @@ abstract class HelperNotificationsFragment<T : ViewBinding> : WhyGoogleFragment<
     open fun handleActivityResultLauncher(permissions: Map<String, @JvmSuppressWildcards Boolean>) {
         var permissionGranted = true
         permissions.entries.forEach {
-            if (it.key in Manifest.permission.POST_NOTIFICATIONS && it.value == false)
+            if (it.key in Manifest.permission.POST_NOTIFICATIONS && it.value.not())
                 permissionGranted = false
         }
         if (!permissionGranted) {

@@ -2,7 +2,6 @@ package ir.ayantech.pishkhanhelper.locale
 
 import android.app.Activity
 import android.content.Context
-import android.os.Build
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.LocaleHelperAppCompatDelegate
@@ -18,11 +17,9 @@ class LocaleHelperActivityDelegateImpl : LocaleHelperActivityDelegate {
         }
 
     override fun onCreate(activity: Activity) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            activity.window.decorView.layoutDirection =
-                if (LocaleHelper.isRTL(Locale.getDefault())) View.LAYOUT_DIRECTION_RTL
-                else View.LAYOUT_DIRECTION_LTR
-        }
+        activity.window.decorView.layoutDirection =
+            if (LocaleHelper.isRTL(Locale.getDefault())) View.LAYOUT_DIRECTION_RTL
+            else View.LAYOUT_DIRECTION_LTR
     }
 
     override fun setLocale(activity: Activity, newLocale: Locale) {

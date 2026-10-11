@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import ir.ayantech.ayannetworking.api.AyanApi
 import ir.ayantech.ayannetworking.ayanModel.LogLevel
 import ir.ayantech.pishkhanhelper.PishkhanHelper
 import ir.ayantech.pishkhanhelper.app.databinding.ActivityMainBinding
 import ir.ayantech.pishkhanhelper.components.initButtonFilled
 import ir.ayantech.pishkhanhelper.rate.showRatingIntent
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,8 +22,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-//        changeThemeMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         val ayanApi = AyanApi(
             context = this,
@@ -38,7 +38,13 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "DONE :)", Toast.LENGTH_SHORT).show()
             }
             init.setOnClickListener {
-                PishkhanHelper.initialize(application, ayanApi)
+                lifecycleScope.launch {
+                    PishkhanHelper.initialize(
+                        context = this@MainActivity,
+                        corePishkhan24Api = ayanApi,
+                        coroutineScope = this
+                    )
+                }
             }
             terms.setOnClickListener {
                 PishkhanHelper.getConfigBusinessInfo(
